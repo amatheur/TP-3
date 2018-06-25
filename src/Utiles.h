@@ -12,6 +12,4 @@ const Operacion READ = 6;
 const Operacion JUMP = 7;
 const Operacion JUMPZ = 8;
 
-typedef std::string Id;
-
 #endif /*__UTILES_H__*/

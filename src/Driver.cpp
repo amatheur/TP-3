@@ -1,19 +1,20 @@
 #include "Driver.h"
 #include "Calculadora.h"
 
-Driver::Driver() {
-	// COMPLETAR
-    Calculadora:Programa();
+Driver::Driver() : _prog(Programa()), _calc (_prog){
+    // COMPLETAR
 }
 
 Driver::~Driver() {
 	// COMPLETAR
+
 }
 
 // Operaciones para agregar instrucciones
 
 void Driver::begin(string rutina) {
 	// COMPLETAR
+
 }
 
 void Driver::end(string rutina) {
@@ -22,6 +23,7 @@ void Driver::end(string rutina) {
 
 void Driver::push(int n) {
 	// COMPLETAR
+
 }
 
 void Driver::add() {

@@ -1,6 +1,6 @@
 #include "Programa.h"
 
-Programa::Rutina::Rutina(Id nombre) {
+Programa::Rutina::Rutina(string nombre) {
     _idRutina = nombre;
 }
 
@@ -12,7 +12,7 @@ void Programa::Rutina::agregarInstruccion(Instruccion instruccion) {
     _instrucciones.push_back(instruccion);
 }
 
-Id Programa::Rutina::idRutina() const {
+string Programa::Rutina::idRutina() const {
     return _idRutina;
 }
 
@@ -22,44 +22,29 @@ int Programa::Rutina::longitud() const {
 
 Programa::Programa() {}
 
-bool Programa::esRutinaExistente(Id idRutina) const {
-    bool res = false;
-    for(int i = 0; i < _rutinas.size(); i++){
-        if(_rutinas[i].idRutina() == idRutina){
-            res = true;
-        }
-    }
-    return res;
+bool Programa::esRutinaExistente(string idRutina) const {
+    return  (this->_rutinas.count(idRutina) == 1);
 }
 
-int Programa::posRutina(Id idRutina) const {
-    int res = -1;
-    if(esRutinaExistente(idRutina)){
-        for(int i = 0; i < _rutinas.size(); i++){
-            if(_rutinas[i].idRutina() == idRutina)
-            {
-                res = i;
-            }
-        }
-    }
-    return res;
+Programa::Rutina* Programa::posRutina(string idRutina) const {
+    this->_rutinas.at(idRutina);
 }
 
-void Programa::agregarInstruccion(Id idRutina, Instruccion instruccion) {
+void Programa::agregarInstruccion(string idRutina, Instruccion instruccion) {
     if(esRutinaExistente(idRutina)){
-        _rutinas[posRutina(idRutina)].agregarInstruccion(instruccion);
+
     }else{
         Rutina rutinaNueva = Rutina(idRutina);
-        rutinaNueva.agregarInstruccion(instruccion);
-        _rutinas.push_back(rutinaNueva);
+        rutinaNueva.agregarInstruccion(std::move(instruccion));
+        _rutinas.[idRutina] = rutinaNueva;
     }
 }
 
-int Programa::longitud(Id idRutina) const {
+int Programa::longitud(string idRutina) const {
     return _rutinas[posRutina(idRutina)].longitud();
 }
 
-Instruccion Programa::instruccion(Id idRutina, int i) const {
+Instruccion Programa::instruccion(string idRutina, int i) const {
     return _rutinas[posRutina(idRutina)].instrucciones()[i];
 }
 

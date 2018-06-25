@@ -246,6 +246,9 @@
 		<Unit filename="C:/Users/Manuel/Documents/alumnos/src/Ventana.h">
 			<Option target="correrTests"/>
 		</Unit>
+		<Unit filename="C:/Users/Manuel/Documents/alumnos/src/string_map.h">
+			<Option target="correrTests"/>
+		</Unit>
 		<Unit filename="C:/Users/Manuel/Documents/alumnos/tests/google-test/src/gtest-all.cc">
 			<Option target="gtest"/>
 		</Unit>
