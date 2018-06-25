@@ -32,20 +32,25 @@ Programa::Rutina* Programa::posRutina(string idRutina) const {
 
 void Programa::agregarInstruccion(string idRutina, Instruccion instruccion) {
     if(esRutinaExistente(idRutina)){
+        (this->posRutina(idRutina))->agregarInstruccion(instruccion);
 
     }else{
         Rutina rutinaNueva = Rutina(idRutina);
         rutinaNueva.agregarInstruccion(std::move(instruccion));
-        _rutinas.[idRutina] = rutinaNueva;
+        this->_rutinas[idRutina]= rutinaNueva;
     }
 }
 
 int Programa::longitud(string idRutina) const {
-    return _rutinas[posRutina(idRutina)].longitud();
+    if (this->esRutinaExistente(idRutina)){
+    Rutina* Aux = (this->_rutinas.at(idRutina));
+    Aux->instrucciones().size();
+    }
 }
 
 Instruccion Programa::instruccion(string idRutina, int i) const {
-    return _rutinas[posRutina(idRutina)].instrucciones()[i];
+    Rutina* Aux =  this->_rutinas[idRutina];
+    return *Aux->instrucciones()[i];
 }
 
 

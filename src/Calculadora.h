@@ -12,16 +12,16 @@ public:
 
     Calculadora(Programa programa);
 
-    void asignarVariable(Id idVariable, int valor);
+    void asignarVariable(string idVariable, int valor);
 
-    void ejecutar(Id Rutina);
+    void ejecutar(string Rutina);
 
-    int valorVariable(Id idVariable) const;
+    int valorVariable(string idVariable) const;
 
     class Variable {
     public:
         // Crea una variable de id idVariable y valor 0
-        Variable(Id idVariable);
+        Variable(string idVariable);
 
         //Asigna el valor "valor" a la variable
         void asignarValor(int valor);
@@ -30,11 +30,11 @@ public:
         int valor() const;
 
         //devuelve el id de la variable
-        Id id() const;
+        string id() const;
 
     private:
         int _valor;
-        Id _idVariable;
+        string _idVariable;
 
     };
 
@@ -44,10 +44,10 @@ private:
     Programa _programa;
 
     //devuelve la posicion de la variable en el vector de variables de la calculadora, si no existe, devuelve -1
-    int posVariable(Id idVariable) const;
+    int posVariable(string idVariable) const;
 
     //devuelve true si la variable existe dentro del vector de variables de la calculadora, y false en caso contrario
-    bool variableExiste(Id idVariable) const;
+    bool variableExiste(string idVariable) const;
 
     //devuelve el ultimo valor del vector_pila, y lo elimina del mismo, si no hay valores almacenados en _pila, devuelve 0
     int devolverYSacarDePila();

@@ -42,27 +42,27 @@ public:
 	// Agrega una instrucción a la rutina indicada.
 	// Si la rutina indicada no existe, crea una nueva rutina
 	// con dicho nombre.
-	void agregarInstruccion(Id idRutina, Instruccion instruccion);
+	void agregarInstruccion(string idRutina, Instruccion instruccion);
 
 	// Devuelve True si idRutina representa una rutina existente.
-	bool esRutinaExistente(Id idRutina) const;
+	bool esRutinaExistente(string idRutina) const;
 
 	// Devuelve la longitud (cantidad de instrucciones) de la rutina
 	// indicada.
 	//
 	// Precondición: esRutinaExistente(idRutina)
-	int longitud(Id idRutina) const;
+	int longitud(string idRutina) const;
 
 	// Devuelve la i-ésima instrucción de la rutina indicada.
 	//
 	// Precondición:
 	//   esRutinaExistente(idRutina) && 0 <= i && i < longitud(idRutina)
-	Instruccion instruccion(Id idRutina, int i) const;
+	Instruccion instruccion(string idRutina, int i) const;
 
     class Rutina {
     public:
         //crea una rutina vacia, de id idRutina
-        Rutina(Id nombre);
+        Rutina(string nombre);
 
         // devuelve el vector de instrucciones de la rutina
         vector<Instruccion> instrucciones() const;
@@ -71,14 +71,14 @@ public:
         void agregarInstruccion(Instruccion instruccion);
 
         //devuelve el id de la rutina
-        Id idRutina() const;
+        string idRutina() const;
 
         //devuelve la longitud de la rutina
         int longitud() const;
 
     private:
         vector<Instruccion> _instrucciones;
-        Id _idRutina;
+        string _idRutina;
     };
 
 private:
@@ -86,7 +86,7 @@ private:
     string_map _rutinas;
 
     //devuelve la posicion de la rutina, si no existe, devuelve -1
-    Rutina* posRutina(Id idRutina) const;
+    Rutina* posRutina(string idRutina) const;
 
     
 

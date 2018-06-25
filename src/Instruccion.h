@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 
 #include "Utiles.h"
 
@@ -30,7 +31,7 @@ public:
 	Instruccion(Operacion operacion);
 
         // Precondición: la operación es READ, WRITE, JUMP o JUMPZ
-	Instruccion(Operacion operacion, Id nombre);
+	Instruccion(Operacion operacion, string nombre);
 
 	Operacion operacion() const;
 
@@ -38,11 +39,11 @@ public:
 	int valor() const;
 
         // Precondición: la operación es READ, WRITE, JUMP o JUMPZ
-	Id nombre() const;
+	string nombre() const;
 private:
     Operacion _operacion;
     int _valor;
-    Id _nombre;
+    string _nombre;
 	// COMPLETAR
 };
 
