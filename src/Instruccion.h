@@ -2,10 +2,11 @@
 #define __INSTRUCCION_H__
 
 #include <iostream>
-#include <vector>
-#include <string>
 
 #include "Utiles.h"
+
+// typedef enum{oPush, oAdd, oSub, oMul, oWrite, oRead, oJump, oJumpz} Operacion;
+
 
 // Una instrucción está dada por un código de operación junto con una
 // secuencia de parámetros de tipo entero.
@@ -24,14 +25,31 @@
 //
 class Instruccion {
 public:
-	// Precondición: la operación es PUSH
+
+    Instruccion CrearInstPush(int val);
+
+    Instruccion CrearInstVar(Operacion op, Variable var);
+
+    Instruccion CrearInstPila(Operacion op);
+
+    Instruccion CrearInstRut(Operacion op, Rutina rut);
+
+    Operacion operacion() const;
+
+    Variable Variable() const;
+
+    Rutina Rutina() const;
+
+    int Valor() const;
+	/*
+    // Precondición: la operación es PUSH
 	Instruccion(Operacion operacion, int valor);
 
         // Precondición: la operación es ADD, SUB o MUL
 	Instruccion(Operacion operacion);
 
         // Precondición: la operación es READ, WRITE, JUMP o JUMPZ
-	Instruccion(Operacion operacion, string nombre);
+	Instruccion(Operacion operacion, Id nombre);
 
 	Operacion operacion() const;
 
@@ -39,12 +57,21 @@ public:
 	int valor() const;
 
         // Precondición: la operación es READ, WRITE, JUMP o JUMPZ
-	string nombre() const;
+	Id nombre() const;
+
+	 */
 private:
+
+    Operacion _op;
+    Variable _var;
+    Rutina _rut;
+    int _val;
+    /*
     Operacion _operacion;
     int _valor;
-    string _nombre;
+    Id _nombre;
 	// COMPLETAR
+     */
 };
 
 #endif /*__INSTRUCCION_H__*/

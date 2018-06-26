@@ -1,5 +1,43 @@
 #include "Instruccion.h"
+#include "Utiles.h"
 
+Instruccion Instruccion::CrearInstPila(Operacion op){
+    _op = op;
+}
+
+Instruccion Instruccion::CrearInstPush(int val) {
+    _op = oPush;
+    _val = val;
+}
+
+Instruccion Instruccion::CrearInstRut(Operacion op, Rutina rut){
+    _op = op;
+    _rut = rut;
+}
+
+Instruccion Instruccion::CrearInstVar(Operacion op, Variable var) {
+    _op = op;
+    _var = var;
+}
+
+Rutina Instruccion::Rutina() const {
+    return _rut;
+}
+
+Variable Instruccion::Variable() const {
+    return _var;
+}
+
+Operacion Instruccion::operacion() const {
+    return _op;
+}
+
+int Instruccion::Valor() const {
+    return _val;
+}
+
+
+/*
 Instruccion::Instruccion(Operacion operacion, int valor){
     _operacion = operacion;
     _valor = valor;
@@ -25,3 +63,7 @@ int Instruccion::valor() const {
 Id Instruccion::nombre() const {
     return _nombre;
 }
+
+
+
+ */
