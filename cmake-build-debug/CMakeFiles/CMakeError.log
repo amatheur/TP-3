@@ -1,10 +1,10 @@
 Determining if the include file pthread.h exists failed with the following output:
 Change Dir: C:/Users/Manuel/Documents/alumnos/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"nmake" "/NOLOGO" "cmTC_01307\fast"
-	"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_01307.dir\build.make /nologo -L                  CMakeFiles\cmTC_01307.dir\build
-Building C object CMakeFiles/cmTC_01307.dir/CheckIncludeFile.c.obj
-	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @C:\Users\Manuel\AppData\Local\Temp\nmF403.tmp
+Run Build Command:"nmake" "/NOLOGO" "cmTC_d1893\fast"
+	"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x86\nmake.exe" -f CMakeFiles\cmTC_d1893.dir\build.make /nologo -L                  CMakeFiles\cmTC_d1893.dir\build
+Building C object CMakeFiles/cmTC_d1893.dir/CheckIncludeFile.c.obj
+	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @C:\Users\Manuel\AppData\Local\Temp\nm1AFA.tmp
 CheckIncludeFile.c
 C:\Users\Manuel\Documents\alumnos\cmake-build-debug\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1): fatal error C1083: No se puede abrir el archivo incluir: 'pthread.h': No such file or directory
 NMAKE : fatal error U1077: 'C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe' : c¾digo devuelto '0x2'
