@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Manuel/Documents/alumnos
+# Install script for directory: /media/grom/SanDisk_128/Facultad/2018-1C-AyED2/TPs/TP3/TP-3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/solucion")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -27,14 +27,14 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
+# Install shared libraries without execute permission?
+if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
+  set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Manuel/Documents/alumnos/cmake-build-debug/tests/google-test/cmake_install.cmake")
+  include("/media/grom/SanDisk_128/Facultad/2018-1C-AyED2/TPs/TP3/TP-3/cmake-build-debug/tests/google-test/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Manuel/Documents/alumnos/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/media/grom/SanDisk_128/Facultad/2018-1C-AyED2/TPs/TP3/TP-3/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -75,7 +75,7 @@ private:
 
     int DevolverYSacarDePila();
 
-    int BuscarEnVentana(Ventana& v, int instante, int inicio, int fin) const;
+    int BuscarEnVentana(Ventana<tuple<int, int>>& v, int instante, int inicio, int fin) const;
 
 };
 

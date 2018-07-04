@@ -26,24 +26,24 @@ TEST(test_instruccion, i_mul) {
 TEST(test_instruccion, i_read) {
     Instruccion i(oRead, "foo");
     EXPECT_EQ(i.operacion(), oRead);
-    EXPECT_EQ(i.Variable(), "foo");
+    EXPECT_EQ(i.variable(), "foo");
 }
 
 TEST(test_instruccion, i_write) {
     Instruccion i(oWrite, "bar");
     EXPECT_EQ(i.operacion(), oWrite);
-    EXPECT_EQ(i.Variable(), "bar");
+    EXPECT_EQ(i.variable(), "bar");
 }
 
 TEST(test_instruccion, i_jump) {
     Instruccion i(oJump, "baz");
     EXPECT_EQ(i.operacion(), oJump);
-    EXPECT_EQ(i.Rutina(), "baz");
+    EXPECT_EQ(i.rutina(), "baz");
 }
 
 TEST(test_instruccion, i_jumpz) {
     Instruccion i(oJumpz, "quux");
     EXPECT_EQ(i.operacion(), oJumpz);
-    EXPECT_EQ(i.Rutina(), "quux");
+    EXPECT_EQ(i.rutina(), "quux");
 }
 

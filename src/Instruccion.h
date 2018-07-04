@@ -34,9 +34,9 @@ public:
 
     Operacion operacion() const;
 
-    Variable Variable() const;
+    Variable variable() const;
 
-    Rutina Rutina() const;
+    Rutina rutina() const;
 
     int Valor() const;
 	/*

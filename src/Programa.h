@@ -61,9 +61,9 @@ public:
 
     private:
 
-        DiccionarioTrie::ItDiccTrie _it;
+        DiccionarioTrie<Lista_Enlazada<Instruccion>>::ItDiccTrie _it;
 
-		ItPrograma(DiccionarioTrie::ItDiccTrie it);
+		ItPrograma(DiccionarioTrie<Lista_Enlazada<Instruccion>>::ItDiccTrie it);
     };
 
     ItPrograma CrearIt();

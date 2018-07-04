@@ -33,14 +33,14 @@ Calculadora::Calculadora(Programa prog, Rutina rut, int tam) {
             Instruccion instActual= *(itInstActual);
             if(instActual.operacion() == oWrite or instActual.operacion() == oRead){
                 ItVar itVariable;
-                if(!_variables.Definido(instActual.Variable())){
+                if(!_variables.Definido(instActual.variable())){
                     _ventanas.push_front(Ventana(tam));
                     ItListVent itVentana = _ventanas.begin();
                     Lista_Enlazada<int> listVar;
                     Var nuevaVar(itVentana, listVar);
-                    itVariable = _variables.Definir(instActual.Variable(), nuevaVar);
+                    itVariable = _variables.Definir(instActual.variable(), nuevaVar);
                 } else {
-                    itVariable = _variables.BuscarIterador(instActual.Variable());
+                    itVariable = _variables.BuscarIterador(instActual.variable());
                 }
                 InstConIt instConIt(instActual.operacion(), itVariable, _programa.CrearIt(), 0);
                 get<1>(itNuevaRut.Actual()).push_back(instConIt);

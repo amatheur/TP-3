@@ -19,11 +19,11 @@ Instruccion::Instruccion(Operacion op, std::string nombre){
     }
 }
 
-Rutina Instruccion::Rutina() const {
+Rutina Instruccion::rutina() const {
     return _rut;
 }
 
-Variable Instruccion::Variable() const {
+Variable Instruccion::variable() const {
     return _var;
 }
 

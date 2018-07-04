@@ -18,7 +18,7 @@ DiccionarioTrie<T>::~DiccionarioTrie(){
 }
 
 template <typename T>
-DiccionarioTrie::ItDiccTrie DiccionarioTrie<T>::Definir(const string& clave, T &significado) {
+typename DiccionarioTrie<T>::ItDiccTrie DiccionarioTrie<T>::Definir(const string& clave, T &significado) {
     if (_raiz == NULL) {
         _raiz = new Nodo;
     }
@@ -88,7 +88,7 @@ T& DiccionarioTrie<T>::Significado(const string &clave) const{
 
 
 template <typename T>
-void DiccionarioTrie::_destroy(Nodo* &raiz) {
+void DiccionarioTrie<T>::_destroy(Nodo* &raiz) {
 
     if(raiz != NULL) {
         for (int i = 0; i < 256; ++i) {
@@ -122,7 +122,7 @@ DiccionarioTrie<T>::ItDiccTrie::ItDiccTrie(Nodo *actual, Pila<Nodo *> padres, st
 }
 
 template <typename T>
-DiccionarioTrie<T>::ItDiccTrie DiccionarioTrie<T>::BuscarIterador(string clave) {
+typename DiccionarioTrie<T>::ItDiccTrie DiccionarioTrie<T>::BuscarIterador(string clave) {
     Nodo* actual = _raiz;
     Pila<Nodo*> padres;
 
@@ -154,7 +154,7 @@ int DiccionarioTrie<T>::ItDiccTrie::Siguiente(Nodo *actual, int desde) {
 }
 
 template <typename T>
-DiccionarioTrie<T>::ItDiccTrie DiccionarioTrie<T>::CrearIt() {
+typename DiccionarioTrie<T>::ItDiccTrie DiccionarioTrie<T>::CrearIt() {
     Nodo* actual = _raiz;
     Pila<Nodo*> padres;
     string clave;

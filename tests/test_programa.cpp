@@ -16,7 +16,7 @@ TEST(test_programa, rutinaExistente) {
 
 TEST(test_programa, longitud) {
     Programa p;
-    p.AgregarInstruccion("foo", Instruccion(10);
+    p.AgregarInstruccion("foo", Instruccion(10));
     EXPECT_EQ(p.Longitud("foo"), 1);
     p.AgregarInstruccion("foo", Instruccion(oAdd));
     EXPECT_EQ(p.Longitud("foo"), 2);
@@ -35,7 +35,7 @@ TEST(test_programa, instruccion) {
     p.AgregarInstruccion("X", Instruccion(oAdd));
     EXPECT_EQ(p.Longitud("X"), 5);
     EXPECT_EQ(p.instruccion("X", 0).operacion(), oRead);
-    EXPECT_EQ(p.instruccion("X", 0).Variable(), "x");
+    EXPECT_EQ(p.instruccion("X", 0).variable(), "x");
     EXPECT_EQ(p.instruccion("X", 1).operacion(), oPush);
     EXPECT_EQ(p.instruccion("X", 1).Valor(), 2);
     EXPECT_EQ(p.instruccion("X", 2).operacion(), oMul);
@@ -55,15 +55,15 @@ TEST(test_programa, dosRutinas) {
     EXPECT_EQ(p.Longitud("A"), 3);
     EXPECT_EQ(p.Longitud("B"), 2);
     EXPECT_EQ(p.instruccion("A", 0).operacion(), oRead);
-    EXPECT_EQ(p.instruccion("A", 0).Variable(), "a");
+    EXPECT_EQ(p.instruccion("A", 0).variable(), "a");
     EXPECT_EQ(p.instruccion("A", 1).operacion(), oJump);
-    EXPECT_EQ(p.instruccion("A", 1).Rutina(), "c");
+    EXPECT_EQ(p.instruccion("A", 1).rutina(), "c");
     EXPECT_EQ(p.instruccion("A", 2).operacion(), oRead);
-    EXPECT_EQ(p.instruccion("A", 2).Variable(), "e");
+    EXPECT_EQ(p.instruccion("A", 2).variable(), "e");
 
     EXPECT_EQ(p.instruccion("B", 0).operacion(), oWrite);
-    EXPECT_EQ(p.instruccion("B", 0).Variable(), "b");
+    EXPECT_EQ(p.instruccion("B", 0).variable(), "b");
     EXPECT_EQ(p.instruccion("B", 1).operacion(), oJump);
-    EXPECT_EQ(p.instruccion("B", 1).Rutina(), "d");
+    EXPECT_EQ(p.instruccion("B", 1).rutina(), "d");
 }
 

@@ -17,18 +17,13 @@ typedef std::string Variable;
 typedef std::string Rutina;
 
 template <typename T>
-typedef std::stack<T> Pila;
+using Pila = std::stack<T>;
 
 template <typename T>
-typedef std::queue<T> Cola;
+using Cola = std::queue<T>;
 
 template <typename T>
-typedef std::list<T> Lista_Enlazada;
+using Lista_Enlazada = std::list<T>;
 
-template <typename T, typename S>
-typedef std::map<T, S> Diccionario_Lineal;
-
-template <typename T>
-typedef std::set<T> Conjunto_Lineal;
 
 #endif /*__UTILES_H__*/
