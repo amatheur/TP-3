@@ -1,56 +1,50 @@
 #include "Programa.h"
 
-Programa::Rutina::Rutina(string nombre) {
-    _idRutina = nombre;
+Programa::Programa() {
+    _rutinas = DiccionarioTrie();
+    _cantRut = 0;
 }
 
-vector<Instruccion> Programa::Rutina::instrucciones() const {
-    return _instrucciones;
+int Programa::CantidadRutinas() const {
+    return _cantRut;
 }
 
-void Programa::Rutina::agregarInstruccion(Instruccion instruccion) {
-    _instrucciones.push_back(instruccion);
-}
-
-string Programa::Rutina::idRutina() const {
-    return _idRutina;
-}
-
-int Programa::Rutina::longitud() const {
-    return _instrucciones.size();
-}
-
-Programa::Programa() {}
-
-bool Programa::esRutinaExistente(string idRutina) const {
-    return  (this->_rutinas.Definido(idRutina) == 1);
-}
-
-Programa::Rutina* Programa::posRutina(string idRutina) const {
-    this->_rutinas.Significado(idRutina);
-}
-
-void Programa::agregarInstruccion(string idRutina, Instruccion instruccion) {
-    if(esRutinaExistente(idRutina)){
-        (this->posRutina(idRutina))->agregarInstruccion(instruccion);
-
-    }else{
-        Rutina rutinaNueva = Rutina(idRutina);
-        rutinaNueva.agregarInstruccion(std::move(instruccion));
-        this->_rutinas[idRutina]= rutinaNueva;
+void Programa::AgregarInstruccion(Rutina rut, Instruccion inst) {
+    if(_rutinas.Definido(rut)){
+        _rutinas.Significado(rut).push_back(inst);
+    } else {
+        Lista_Enlazada<Instruccion> list;
+        list.push_back(inst);
+        _rutinas.Definir(rut, list);
+        _cantRut ++;
     }
 }
 
-int Programa::longitud(string idRutina) const {
-    if (this->esRutinaExistente(idRutina)){
-    Rutina* Aux = (this->_rutinas.Significado(idRutina));
-    Aux->instrucciones().size();
-    }
+int Programa::Longitud(Rutina rut) const {
+    return _rutinas.Significado(rut).size();
 }
 
-Instruccion Programa::instruccion(string idRutina, int i) const {
-    Rutina* Aux =  this->_rutinas[idRutina];
-    return *Aux->instrucciones()[i];
+Instruccion Programa::instruccion(Rutina rut, int indice) const {
+    Lista_Enlazada::iterator it = _rutinas.Significado(rut).begin();
+    advance(it, indice);
+    return *(it);
 }
 
+Programa::ItPrograma::ItPrograma(DiccionarioTrie::ItDiccTrie it): {
+    _it = it;
+}
+
+
+Programa::ItPrograma Programa::CrearIt() {
+    DiccionarioTrie::ItDiccTrie it = _rutinas.CrearIt();
+    return ItPrograma::ItPrograma(it);
+}
+
+tuple<Rutina, Lista_Enlazada<Instruccion>>& Programa::ItPrograma::Actual() {
+    return _it.Actual();
+}
+
+void Programa::ItPrograma::Avanzar() {
+    _it.Actual();
+}
 

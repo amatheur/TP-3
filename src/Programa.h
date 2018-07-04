@@ -34,59 +34,43 @@ using namespace std;
 //       write(x)
 
 class Programa {
+
 public:
-    class Rutina;
-	// Inicialmente no hay ninguna rutina.
+
 	Programa();
 
-	// Agrega una instrucción a la rutina indicada.
-	// Si la rutina indicada no existe, crea una nueva rutina
-	// con dicho nombre.
-	void agregarInstruccion(string idRutina, Instruccion instruccion);
+    void AgregarInstruccion(Rutina rut, Instruccion inst);
 
-	// Devuelve True si idRutina representa una rutina existente.
-	bool esRutinaExistente(string idRutina) const;
+    int CantidadRutinas() const;
 
-	// Devuelve la longitud (cantidad de instrucciones) de la rutina
-	// indicada.
-	//
-	// Precondición: esRutinaExistente(idRutina)
-	int longitud(string idRutina) const;
+    int Longitud(Rutina rut) const;
 
-	// Devuelve la i-ésima instrucción de la rutina indicada.
-	//
-	// Precondición:
-	//   esRutinaExistente(idRutina) && 0 <= i && i < longitud(idRutina)
-	Instruccion instruccion(string idRutina, int i) const;
+    Instruccion instruccion(Rutina rut, int indice) const;
 
-    class Rutina {
+    class ItPrograma{
+
+        friend class Programa;
+
     public:
-        //crea una rutina vacia, de id idRutina
-        Rutina(string nombre);
 
-        // devuelve el vector de instrucciones de la rutina
-        vector<Instruccion> instrucciones() const;
+        tuple<Rutina, Lista_Enlazada<Instruccion>>& Actual();
 
-        //agraga una instruccion al vector de instrucciones de la rutina
-        void agregarInstruccion(Instruccion instruccion);
-
-        //devuelve el id de la rutina
-        string idRutina() const;
-
-        //devuelve la longitud de la rutina
-        int longitud() const;
+        void Avanzar();
 
     private:
-        vector<Instruccion> _instrucciones;
-        string _idRutina;
+
+        DiccionarioTrie::ItDiccTrie _it;
+
+		ItPrograma(DiccionarioTrie::ItDiccTrie it);
     };
 
-private:
-	// COMPLETAR
-    DiccionarioTrie _rutinas;
+    ItPrograma CrearIt();
 
-    //devuelve la posicion de la rutina, si no existe, devuelve -1
-    Rutina* posRutina(string idRutina) const;
+private:
+	DiccionarioTrie<Lista_Enlazada<Instruccion>> _rutinas;
+
+	int _cantRut;
+
 
     
 
