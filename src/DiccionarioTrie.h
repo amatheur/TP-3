@@ -1,5 +1,5 @@
-#ifndef STRING_MAP_H_
-#define STRING_MAP_H_
+#ifndef DICC_TRIE_H_
+#define DICC_TRIE_H_
 
 #include <string>
 #include <vector>
@@ -75,4 +75,4 @@ public:
 
 #include "DiccionarioTrie.hpp"
 
-#endif // STRING_MAP_H_
+#endif // DICC_TRIE_H_
