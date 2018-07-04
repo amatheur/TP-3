@@ -232,6 +232,12 @@
 		<Unit filename="/media/grom/SanDisk_128/Facultad/2018-1C-AyED2/TPs/TP3/TP-3/src/Calculadora.h">
 			<Option target="correrTests"/>
 		</Unit>
+		<Unit filename="/media/grom/SanDisk_128/Facultad/2018-1C-AyED2/TPs/TP3/TP-3/src/DiccionarioTrie.h">
+			<Option target="correrTests"/>
+		</Unit>
+		<Unit filename="/media/grom/SanDisk_128/Facultad/2018-1C-AyED2/TPs/TP3/TP-3/src/DiccionarioTrie.hpp">
+			<Option target="correrTests"/>
+		</Unit>
 		<Unit filename="/media/grom/SanDisk_128/Facultad/2018-1C-AyED2/TPs/TP3/TP-3/src/Driver.cpp">
 			<Option target="correrTests"/>
 		</Unit>
@@ -256,7 +262,7 @@
 		<Unit filename="/media/grom/SanDisk_128/Facultad/2018-1C-AyED2/TPs/TP3/TP-3/src/Ventana.h">
 			<Option target="correrTests"/>
 		</Unit>
-		<Unit filename="/media/grom/SanDisk_128/Facultad/2018-1C-AyED2/TPs/TP3/TP-3/src/string_map.h">
+		<Unit filename="/media/grom/SanDisk_128/Facultad/2018-1C-AyED2/TPs/TP3/TP-3/src/Ventana.hpp">
 			<Option target="correrTests"/>
 		</Unit>
 		<Unit filename="/media/grom/SanDisk_128/Facultad/2018-1C-AyED2/TPs/TP3/TP-3/tests/google-test/src/gtest-all.cc">

@@ -1,23 +1,22 @@
 #include "Instruccion.h"
 #include "Utiles.h"
 
-Instruccion Instruccion::CrearInstPila(Operacion op){
+Instruccion::Instruccion(Operacion op){
     _op = op;
 }
 
-Instruccion Instruccion::CrearInstPush(int val) {
+Instruccion::Instruccion(int val) {
     _op = oPush;
     _val = val;
 }
 
-Instruccion Instruccion::CrearInstRut(Operacion op, Rutina rut){
+Instruccion::Instruccion(Operacion op, std::string nombre){
     _op = op;
-    _rut = rut;
-}
-
-Instruccion Instruccion::CrearInstVar(Operacion op, Variable var) {
-    _op = op;
-    _var = var;
+    if(op == oJump or op == oJumpz){
+        _rut = nombre;
+    } else{
+        _var = nombre;
+    }
 }
 
 Rutina Instruccion::Rutina() const {

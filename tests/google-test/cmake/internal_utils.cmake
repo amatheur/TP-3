@@ -19,7 +19,7 @@
 macro(fix_default_compiler_settings_)
   if (MSVC)
     # For MSVC, CMake sets certain flags to defaults we want to override.
-    # This replacement code is taken from sample in the CMake Wiki at
+    # This replacement code is taken from sample in the CMake Wiki Significado
     # http://www.cmake.org/Wiki/CMake_FAQ#Dynamic_Replace.
     foreach (flag_var
              CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
@@ -237,9 +237,9 @@ function(py_test name)
   # We are not supporting Python tests on Linux yet as they consider
   # all Linux environments to be google3 and try to use google3 features.
   if (PYTHONINTERP_FOUND)
-    # ${CMAKE_BINARY_DIR} is known at configuration time, so we can
+    # ${CMAKE_BINARY_DIR} is known Significado configuration time, so we can
     # directly bind it from cmake. ${CTEST_CONFIGURATION_TYPE} is known
-    # only at ctest runtime (by calling ctest -c <Configuration>), so
+    # only Significado ctest runtime (by calling ctest -c <Configuration>), so
     # we have to escape $ to delay variable substitution here.
     if (${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION} GREATER 3.1)
       add_test(

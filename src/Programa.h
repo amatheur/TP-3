@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "string_map.h"
+#include "DiccionarioTrie.h"
 #include "Instruccion.h"
 
 
@@ -83,7 +83,7 @@ public:
 
 private:
 	// COMPLETAR
-    string_map _rutinas;
+    DiccionarioTrie _rutinas;
 
     //devuelve la posicion de la rutina, si no existe, devuelve -1
     Rutina* posRutina(string idRutina) const;

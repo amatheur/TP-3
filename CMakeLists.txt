@@ -4,7 +4,7 @@ project(solucion)
 set(CMAKE_CXX_STANDARD 11)
 
 # Leemos todos los archivos fuentes en ./src
-file(GLOB SOURCE_FILES src/*.cpp src/*.h)
+file(GLOB SOURCE_FILES src/*.cpp src/*.h src/*.hpp)
 
 # Leemos todos los archivos de test en ./tests
 file(GLOB TEST_SOURCES tests/*.cpp)

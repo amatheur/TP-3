@@ -23,11 +23,11 @@ int Programa::Rutina::longitud() const {
 Programa::Programa() {}
 
 bool Programa::esRutinaExistente(string idRutina) const {
-    return  (this->_rutinas.count(idRutina) == 1);
+    return  (this->_rutinas.Definido(idRutina) == 1);
 }
 
 Programa::Rutina* Programa::posRutina(string idRutina) const {
-    this->_rutinas.at(idRutina);
+    this->_rutinas.Significado(idRutina);
 }
 
 void Programa::agregarInstruccion(string idRutina, Instruccion instruccion) {
@@ -43,7 +43,7 @@ void Programa::agregarInstruccion(string idRutina, Instruccion instruccion) {
 
 int Programa::longitud(string idRutina) const {
     if (this->esRutinaExistente(idRutina)){
-    Rutina* Aux = (this->_rutinas.at(idRutina));
+    Rutina* Aux = (this->_rutinas.Significado(idRutina));
     Aux->instrucciones().size();
     }
 }

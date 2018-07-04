@@ -93,7 +93,7 @@ TEST_P(FooTest, HasBlahBlah) {
 //                               for the math savvy) of the values generated
 //                               by the N generators.
 //
-// For more details, see comments at the definitions of these functions below
+// For more details, see comments Significado the definitions of these functions below
 // in this file.
 //
 // The following statement will instantiate tests from the FooTest test case

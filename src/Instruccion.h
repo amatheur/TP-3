@@ -26,13 +26,11 @@
 class Instruccion {
 public:
 
-    Instruccion CrearInstPush(int val);
+    Instruccion(int val); // Equivale a CrearInstPush
 
-    Instruccion CrearInstVar(Operacion op, Variable var);
+    Instruccion(Operacion op, std::string nombre); //Equivale a CrearInstVar y CrearInstRut
 
-    Instruccion CrearInstPila(Operacion op);
-
-    Instruccion CrearInstRut(Operacion op, Rutina rut);
+    Instruccion(Operacion op); // Equivale a CrearInstPila
 
     Operacion operacion() const;
 

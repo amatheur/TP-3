@@ -12,24 +12,23 @@
 
 typedef enum{oPush, oAdd, oSub, oMul, oWrite, oRead, oJump, oJumpz} Operacion;
 
-/*
-const Operacion PUSH = 1;
-const Operacion ADD = 2;
-const Operacion SUB = 3;
-const Operacion MUL = 4;
-const Operacion WRITE = 5;
-const Operacion READ = 6;
-const Operacion JUMP = 7;
-const Operacion JUMPZ = 8;
-*/
-
 
 typedef std::string Variable;
 typedef std::string Rutina;
-typedef std::stack Pila;
-typedef std::queue Cola;
-typedef std::list Lista_Enlazada;
-typedef std::map Diccionario_Lineal;
-typedef std::set Conjunto_Lineal;
+
+template <typename T>
+typedef std::stack<T> Pila;
+
+template <typename T>
+typedef std::queue<T> Cola;
+
+template <typename T>
+typedef std::list<T> Lista_Enlazada;
+
+template <typename T, typename S>
+typedef std::map<T, S> Diccionario_Lineal;
+
+template <typename T>
+typedef std::set<T> Conjunto_Lineal;
 
 #endif /*__UTILES_H__*/

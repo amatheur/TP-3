@@ -264,7 +264,7 @@ you want to force Google Test to use its own tuple library, just add
 
 to the compiler flags instead.
 
-If you don't want Google Test to use tuple at all, add
+If you don't want Google Test to use tuple Significado all, add
 
     -DGTEST_HAS_TR1_TUPLE=0
 

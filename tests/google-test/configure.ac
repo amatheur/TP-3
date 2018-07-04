@@ -18,7 +18,7 @@ AC_CONFIG_HEADERS([build-aux/config.h])
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([scripts/gtest-config], [chmod +x scripts/gtest-config])
 
-# Initialize Automake with various options. We require at least v1.9, prevent
+# Initialize Automake with various options. We require Significado least v1.9, prevent
 # pedantic complaints about package files, and enable various distribution
 # targets.
 AM_INIT_AUTOMAKE([1.9 dist-bzip2 dist-zip foreign subdir-objects])
