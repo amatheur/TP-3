@@ -3,42 +3,42 @@
 #include "../src/Instruccion.h"
 
 TEST(test_instruccion, i_push) {
-    Instruccion i(PUSH, 121);
-    EXPECT_EQ(i.operacion(), PUSH);
-    EXPECT_EQ(i.valor(), 121);
+    Instruccion i(121);
+    EXPECT_EQ(i.operacion(), oPush);
+    EXPECT_EQ(i.Valor(), 121);
 }
 
 TEST(test_instruccion, i_add) {
-    Instruccion i(ADD);
-    EXPECT_EQ(i.operacion(), ADD);
+    Instruccion i(oAdd);
+    EXPECT_EQ(i.operacion(), oAdd);
 }
 
 TEST(test_instruccion, i_sub) {
-    Instruccion i(SUB);
-    EXPECT_EQ(i.operacion(), SUB);
+    Instruccion i(oSub);
+    EXPECT_EQ(i.operacion(), oSub);
 }
 
 TEST(test_instruccion, i_mul) {
-    Instruccion i(MUL);
-    EXPECT_EQ(i.operacion(), MUL);
+    Instruccion i(oMul);
+    EXPECT_EQ(i.operacion(), oMul);
 }
 
 TEST(test_instruccion, i_read) {
-    Instruccion i(READ, "foo");
-    EXPECT_EQ(i.operacion(), READ);
-    EXPECT_EQ(i.nombre(), "foo");
+    Instruccion i(oRead, "foo");
+    EXPECT_EQ(i.operacion(), oRead);
+    EXPECT_EQ(i.Variable(), "foo");
 }
 
 TEST(test_instruccion, i_write) {
-    Instruccion i(WRITE, "bar");
-    EXPECT_EQ(i.operacion(), WRITE);
-    EXPECT_EQ(i.nombre(), "bar");
+    Instruccion i(oWrite, "bar");
+    EXPECT_EQ(i.operacion(), oWrite);
+    EXPECT_EQ(i.Variable(), "bar");
 }
 
 TEST(test_instruccion, i_jump) {
-    Instruccion i(JUMP, "baz");
-    EXPECT_EQ(i.operacion(), JUMP);
-    EXPECT_EQ(i.nombre(), "baz");
+    Instruccion i(oJump, "baz");
+    EXPECT_EQ(i.operacion(), oJump);
+    EXPECT_EQ(i.Rutina(), "baz");
 }
 
 TEST(test_instruccion, i_jumpz) {
