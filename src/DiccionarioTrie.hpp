@@ -178,22 +178,22 @@ typename DiccionarioTrie<T>::ItDiccTrie DiccionarioTrie<T>::CrearIt() {
 
 template <typename T>
 tuple<string, T&> DiccionarioTrie<T>::ItDiccTrie::Actual() {
-    T significado;
+    T* significado;
     if(_actual != NULL) {
-        significado = *(_actual->significado);
+        significado = _actual->significado;
     }
-    tuple<string, T &> res(_clave, significado);
+    tuple<string, T &> res(_clave, *significado);
 
     return res;
 }
 
 template <typename T>
 tuple<string, T&> DiccionarioTrie<T>::ItDiccTrie::Actual() const{
-    T significado;
+    T* significado;
     if(_actual != NULL) {
-        significado = *(_actual->significado);
+        significado = _actual->significado;
     }
-    tuple<string, T &> res(_clave, significado);
+    tuple<string, T &> res(_clave, *significado);
 
     return res;
 }

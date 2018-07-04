@@ -10,7 +10,6 @@ TEST(test_driver, programa_vacio) {
 	ASSERT_TRUE(d.ejecucionFinalizada());
 }
 
-/*
 TEST(test_driver, push) {
 	Driver d;
 	d.begin("tpo");
@@ -27,7 +26,7 @@ TEST(test_driver, push) {
 	ASSERT_EQ(d.topePila(), 6073366);
 	ASSERT_TRUE(d.ejecucionFinalizada());
 }
-*/
+
 TEST(test_driver, push2) {
 	Driver d;
 	d.begin("dekuqs");
