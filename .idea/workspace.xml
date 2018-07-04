@@ -16,7 +16,6 @@
     <list default="true" id="bca41fa1-10e8-4356-8670-d23edbc6569e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/DiccionarioTrie.h" afterPath="$PROJECT_DIR$/src/DiccionarioTrie.h" />
-      <change beforePath="$PROJECT_DIR$/src/DiccionarioTrie.hpp" afterPath="$PROJECT_DIR$/src/DiccionarioTrie.hpp" />
       <change beforePath="$PROJECT_DIR$/src/Programa.cpp" afterPath="$PROJECT_DIR$/src/Programa.cpp" />
       <change beforePath="$PROJECT_DIR$/src/Programa.h" afterPath="$PROJECT_DIR$/src/Programa.h" />
     </list>
@@ -50,33 +49,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DiccionarioTrie.hpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/DiccionarioTrie.hpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="612">
-                  <caret line="80" column="51" lean-forward="false" selection-start-line="80" selection-start-column="51" selection-end-line="80" selection-end-column="51" />
-                  <folding>
-                    <element signature="e#9#21#0" expanded="true" />
-                    <element signature="e#360#372#0" expanded="true" />
-                    <element signature="e#2502#2514#0" expanded="true" />
-                    <element signature="e#2660#2672#0" expanded="true" />
-                    <element signature="e#2843#2855#0" expanded="true" />
-                    <element signature="e#3192#3204#0" expanded="true" />
-                    <element signature="e#3445#3457#0" expanded="true" />
-                    <element signature="e#3668#3680#0" expanded="true" />
-                    <element signature="e#4166#4178#0" expanded="true" />
-                    <element signature="e#4297#4309#0" expanded="true" />
-                    <element signature="e#4459#4471#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="Programa.h" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Programa.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1064">
-                  <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+                <state relative-caret-position="1136">
+                  <caret line="59" column="51" lean-forward="false" selection-start-line="59" selection-start-column="51" selection-end-line="59" selection-end-column="51" />
                   <folding>
                     <element signature="e#47#66#0" expanded="true" />
                   </folding>
@@ -87,8 +64,8 @@
           <file leaf-file-name="DiccionarioTrie.h" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/DiccionarioTrie.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="632">
-                  <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                <state relative-caret-position="812">
+                  <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
                   <folding>
                     <element signature="e#43#60#0" expanded="true" />
                   </folding>
@@ -103,8 +80,8 @@
           <file leaf-file-name="Programa.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Programa.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="828">
-                  <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+                <state relative-caret-position="1100">
+                  <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -134,10 +111,10 @@
         <option value="$PROJECT_DIR$/src/string_map.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/Utiles.h" />
+        <option value="$PROJECT_DIR$/src/DiccionarioTrie.hpp" />
         <option value="$PROJECT_DIR$/src/Programa.h" />
         <option value="$PROJECT_DIR$/src/Programa.cpp" />
         <option value="$PROJECT_DIR$/src/DiccionarioTrie.h" />
-        <option value="$PROJECT_DIR$/src/DiccionarioTrie.hpp" />
       </list>
     </option>
   </component>
@@ -262,7 +239,7 @@
       <workItem from="1530636038608" duration="682000" />
       <workItem from="1530652621335" duration="9524000" />
       <workItem from="1530668505638" duration="3472000" />
-      <workItem from="1530672073006" duration="1587000" />
+      <workItem from="1530672073006" duration="2252000" />
     </task>
     <task id="LOCAL-00001" summary="Cambie las Instrucciones y Utiles.h con las definiciones de tipo que nos dieron ellos.">
       <created>1529997800555</created>
@@ -306,11 +283,18 @@
       <option name="project" value="LOCAL" />
       <updated>1530673442438</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Cambie las Instrucciones y Utiles.h con las definiciones de tipo que nos dieron ellos.">
+      <created>1530673669148</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1530673669148</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26058000" />
+    <option name="totallyTimeSpent" value="26723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-8" width="2736" height="1832" extended-state="6" />
@@ -745,54 +729,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Instruccion.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Instruccion.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
           <caret line="24" column="2" lean-forward="false" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
           <folding>
             <element signature="e#53#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utiles.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#317#329#0" expanded="true" />
-            <element signature="e#368#380#0" expanded="true" />
-            <element signature="e#419#431#0" expanded="true" />
-            <element signature="e#479#503#0" expanded="true" />
-            <element signature="e#557#569#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Programa.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Programa.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1064">
-          <caret line="60" column="24" lean-forward="false" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-          <folding>
-            <element signature="e#47#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -817,10 +759,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Programa.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utiles.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#317#329#0" expanded="true" />
+            <element signature="e#368#380#0" expanded="true" />
+            <element signature="e#419#431#0" expanded="true" />
+            <element signature="e#479#503#0" expanded="true" />
+            <element signature="e#557#569#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Instruccion.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="19" column="1" lean-forward="false" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Programa.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1136">
+          <caret line="59" column="51" lean-forward="false" selection-start-line="59" selection-start-column="51" selection-end-line="59" selection-end-column="51" />
+          <folding>
+            <element signature="e#47#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DiccionarioTrie.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="812">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="e#43#60#0" expanded="true" />
           </folding>

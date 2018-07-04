@@ -44,6 +44,7 @@ public:
 
         void Avanzar();
 
+        ItDiccTrie();
 
     private:
 
@@ -51,7 +52,6 @@ public:
         Nodo* _actual;
         string _clave;
 
-        ItDiccTrie();
 
         ItDiccTrie(Nodo* actual, Pila<Nodo*> padres, string clave);
 
