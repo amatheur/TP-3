@@ -65,7 +65,7 @@ public:
 
     };
 
-    ItDiccTrie Definir(const string &key);
+    ItDiccTrie Definir(const string &clave, T &significado);
 
     ItDiccTrie CrearIt();
 

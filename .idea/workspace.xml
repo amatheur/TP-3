@@ -16,6 +16,7 @@
     <list default="true" id="bca41fa1-10e8-4356-8670-d23edbc6569e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/DiccionarioTrie.h" afterPath="$PROJECT_DIR$/src/DiccionarioTrie.h" />
+      <change beforePath="$PROJECT_DIR$/src/DiccionarioTrie.hpp" afterPath="$PROJECT_DIR$/src/DiccionarioTrie.hpp" />
       <change beforePath="$PROJECT_DIR$/src/Programa.cpp" afterPath="$PROJECT_DIR$/src/Programa.cpp" />
       <change beforePath="$PROJECT_DIR$/src/Programa.h" afterPath="$PROJECT_DIR$/src/Programa.h" />
     </list>
@@ -30,21 +31,9 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.59165424">
+    <splitter split-orientation="horizontal" split-proportion="0.46691176">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="DiccionarioTrie.h" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/DiccionarioTrie.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1208">
-                  <caret line="77" column="19" lean-forward="false" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
-                  <folding>
-                    <element signature="e#43#60#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="Utiles.h" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Utiles.h">
               <provider selected="true" editor-type-id="text-editor">
@@ -61,34 +50,26 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DiccionarioTrie.hpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/DiccionarioTrie.hpp">
+          <file leaf-file-name="Programa.h" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Programa.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2052">
-                  <caret line="57" column="16" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+                <state relative-caret-position="1172">
+                  <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
                   <folding>
-                    <element signature="e#9#21#0" expanded="true" />
-                    <element signature="e#360#372#0" expanded="true" />
-                    <element signature="e#2221#2233#0" expanded="true" />
-                    <element signature="e#2379#2391#0" expanded="true" />
-                    <element signature="e#2562#2574#0" expanded="true" />
-                    <element signature="e#2911#2923#0" expanded="true" />
-                    <element signature="e#3164#3176#0" expanded="true" />
-                    <element signature="e#3387#3399#0" expanded="true" />
-                    <element signature="e#3885#3897#0" expanded="true" />
-                    <element signature="e#4016#4028#0" expanded="true" />
-                    <element signature="e#4178#4190#0" expanded="true" />
+                    <element signature="e#47#66#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Programa.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Programa.h">
+          <file leaf-file-name="DiccionarioTrie.h" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/DiccionarioTrie.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1332">
-                  <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-                  <folding />
+                <state relative-caret-position="848">
+                  <caret line="67" column="58" lean-forward="false" selection-start-line="67" selection-start-column="58" selection-end-line="67" selection-end-column="58" />
+                  <folding>
+                    <element signature="e#43#60#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -97,12 +78,34 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="750">
-          <file leaf-file-name="Programa.cpp" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Programa.cpp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Programa.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="36">
-                  <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+                <state relative-caret-position="540">
+                  <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DiccionarioTrie.hpp" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/DiccionarioTrie.hpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="955">
+                  <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+                  <folding>
+                    <element signature="e#9#21#0" expanded="true" />
+                    <element signature="e#360#372#0" expanded="true" />
+                    <element signature="e#2250#2262#0" expanded="true" />
+                    <element signature="e#2408#2420#0" expanded="true" />
+                    <element signature="e#2591#2603#0" expanded="true" />
+                    <element signature="e#2940#2952#0" expanded="true" />
+                    <element signature="e#3193#3205#0" expanded="true" />
+                    <element signature="e#3416#3428#0" expanded="true" />
+                    <element signature="e#3914#3926#0" expanded="true" />
+                    <element signature="e#4045#4057#0" expanded="true" />
+                    <element signature="e#4207#4219#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -131,10 +134,10 @@
         <option value="$PROJECT_DIR$/src/string_map.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/Utiles.h" />
-        <option value="$PROJECT_DIR$/src/DiccionarioTrie.hpp" />
-        <option value="$PROJECT_DIR$/src/Programa.cpp" />
         <option value="$PROJECT_DIR$/src/Programa.h" />
+        <option value="$PROJECT_DIR$/src/Programa.cpp" />
         <option value="$PROJECT_DIR$/src/DiccionarioTrie.h" />
+        <option value="$PROJECT_DIR$/src/DiccionarioTrie.hpp" />
       </list>
     </option>
   </component>
@@ -259,7 +262,7 @@
       <workItem from="1530636038608" duration="682000" />
       <workItem from="1530652621335" duration="9524000" />
       <workItem from="1530668505638" duration="3472000" />
-      <workItem from="1530672073006" duration="407000" />
+      <workItem from="1530672073006" duration="1349000" />
     </task>
     <task id="LOCAL-00001" summary="Cambie las Instrucciones y Utiles.h con las definiciones de tipo que nos dieron ellos.">
       <created>1529997800555</created>
@@ -289,17 +292,24 @@
       <option name="project" value="LOCAL" />
       <updated>1530672139247</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Cambie las Instrucciones y Utiles.h con las definiciones de tipo que nos dieron ellos.">
+      <created>1530672498521</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1530672498521</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24878000" />
+    <option name="totallyTimeSpent" value="25820000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-8" width="2736" height="1832" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29061103" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29061103" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -341,15 +351,15 @@
           <folding>
             <element signature="e#9#21#0" expanded="true" />
             <element signature="e#360#372#0" expanded="true" />
-            <element signature="e#2221#2233#0" expanded="true" />
-            <element signature="e#2379#2391#0" expanded="true" />
-            <element signature="e#2562#2574#0" expanded="true" />
-            <element signature="e#2911#2923#0" expanded="true" />
-            <element signature="e#3164#3176#0" expanded="true" />
-            <element signature="e#3387#3399#0" expanded="true" />
-            <element signature="e#3885#3897#0" expanded="true" />
-            <element signature="e#4016#4028#0" expanded="true" />
-            <element signature="e#4178#4190#0" expanded="true" />
+            <element signature="e#2250#2262#0" expanded="true" />
+            <element signature="e#2408#2420#0" expanded="true" />
+            <element signature="e#2591#2603#0" expanded="true" />
+            <element signature="e#2940#2952#0" expanded="true" />
+            <element signature="e#3193#3205#0" expanded="true" />
+            <element signature="e#3416#3428#0" expanded="true" />
+            <element signature="e#3914#3926#0" expanded="true" />
+            <element signature="e#4045#4057#0" expanded="true" />
+            <element signature="e#4207#4219#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -412,7 +422,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1692">
           <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
-          <folding />
+          <folding>
+            <element signature="e#47#66#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -433,15 +445,15 @@
           <folding>
             <element signature="e#9#21#0" expanded="true" />
             <element signature="e#360#372#0" expanded="true" />
-            <element signature="e#2221#2233#0" expanded="true" />
-            <element signature="e#2379#2391#0" expanded="true" />
-            <element signature="e#2562#2574#0" expanded="true" />
-            <element signature="e#2911#2923#0" expanded="true" />
-            <element signature="e#3164#3176#0" expanded="true" />
-            <element signature="e#3387#3399#0" expanded="true" />
-            <element signature="e#3885#3897#0" expanded="true" />
-            <element signature="e#4016#4028#0" expanded="true" />
-            <element signature="e#4178#4190#0" expanded="true" />
+            <element signature="e#2250#2262#0" expanded="true" />
+            <element signature="e#2408#2420#0" expanded="true" />
+            <element signature="e#2591#2603#0" expanded="true" />
+            <element signature="e#2940#2952#0" expanded="true" />
+            <element signature="e#3193#3205#0" expanded="true" />
+            <element signature="e#3416#3428#0" expanded="true" />
+            <element signature="e#3914#3926#0" expanded="true" />
+            <element signature="e#4045#4057#0" expanded="true" />
+            <element signature="e#4207#4219#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -543,7 +555,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#47#66#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -760,46 +774,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Programa.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="540">
+          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Programa.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="41" column="16" lean-forward="false" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DiccionarioTrie.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2052">
-          <caret line="57" column="16" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+        <state relative-caret-position="1172">
+          <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
           <folding>
-            <element signature="e#9#21#0" expanded="true" />
-            <element signature="e#360#372#0" expanded="true" />
-            <element signature="e#2221#2233#0" expanded="true" />
-            <element signature="e#2379#2391#0" expanded="true" />
-            <element signature="e#2562#2574#0" expanded="true" />
-            <element signature="e#2911#2923#0" expanded="true" />
-            <element signature="e#3164#3176#0" expanded="true" />
-            <element signature="e#3387#3399#0" expanded="true" />
-            <element signature="e#3885#3897#0" expanded="true" />
-            <element signature="e#4016#4028#0" expanded="true" />
-            <element signature="e#4178#4190#0" expanded="true" />
+            <element signature="e#47#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DiccionarioTrie.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1208">
-          <caret line="77" column="19" lean-forward="false" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+        <state relative-caret-position="848">
+          <caret line="67" column="58" lean-forward="false" selection-start-line="67" selection-start-column="58" selection-end-line="67" selection-end-column="58" />
           <folding>
             <element signature="e#43#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DiccionarioTrie.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="955">
+          <caret line="35" column="43" lean-forward="false" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+          <folding>
+            <element signature="e#9#21#0" expanded="true" />
+            <element signature="e#360#372#0" expanded="true" />
+            <element signature="e#2250#2262#0" expanded="true" />
+            <element signature="e#2408#2420#0" expanded="true" />
+            <element signature="e#2591#2603#0" expanded="true" />
+            <element signature="e#2940#2952#0" expanded="true" />
+            <element signature="e#3193#3205#0" expanded="true" />
+            <element signature="e#3416#3428#0" expanded="true" />
+            <element signature="e#3914#3926#0" expanded="true" />
+            <element signature="e#4045#4057#0" expanded="true" />
+            <element signature="e#4207#4219#0" expanded="true" />
           </folding>
         </state>
       </provider>

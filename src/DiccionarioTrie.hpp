@@ -18,7 +18,7 @@ DiccionarioTrie<T>::~DiccionarioTrie(){
 }
 
 template <typename T>
-DiccionarioTrie::ItDiccTrie DiccionarioTrie<T>::Definir(const string& clave) {
+DiccionarioTrie::ItDiccTrie DiccionarioTrie<T>::Definir(const string& clave, T &significado) {
     if (_raiz == NULL) {
         _raiz = new Nodo;
     }
@@ -33,7 +33,7 @@ DiccionarioTrie::ItDiccTrie DiccionarioTrie<T>::Definir(const string& clave) {
         actual = actual->siguientes[int(clave[i])];
     }
 
-    actual->significado = new T;
+    actual->significado = new T(significado);
 
     return ItDiccTrie::ItDiccTrie(actual, padres, clave);
 }
