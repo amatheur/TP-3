@@ -238,9 +238,39 @@ CMakeFiles\correrTests.dir\src\Calculadora.cpp.obj.provides: CMakeFiles\correrTe
 CMakeFiles\correrTests.dir\src\Calculadora.cpp.obj.provides.build: CMakeFiles\correrTests.dir\src\Calculadora.cpp.obj
 
 
+CMakeFiles\correrTests.dir\src\Driver.cpp.obj: CMakeFiles\correrTests.dir\flags.make
+CMakeFiles\correrTests.dir\src\Driver.cpp.obj: ..\src\Driver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Manuel\Documents\alumnos\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/correrTests.dir/src/Driver.cpp.obj"
+	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\correrTests.dir\src\Driver.cpp.obj /FdCMakeFiles\correrTests.dir\ /FS -c C:\Users\Manuel\Documents\alumnos\src\Driver.cpp
+<<
+
+CMakeFiles\correrTests.dir\src\Driver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/correrTests.dir/src/Driver.cpp.i"
+	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe > CMakeFiles\correrTests.dir\src\Driver.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Manuel\Documents\alumnos\src\Driver.cpp
+<<
+
+CMakeFiles\correrTests.dir\src\Driver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/correrTests.dir/src/Driver.cpp.s"
+	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\correrTests.dir\src\Driver.cpp.s /c C:\Users\Manuel\Documents\alumnos\src\Driver.cpp
+<<
+
+CMakeFiles\correrTests.dir\src\Driver.cpp.obj.requires:
+
+.PHONY : CMakeFiles\correrTests.dir\src\Driver.cpp.obj.requires
+
+CMakeFiles\correrTests.dir\src\Driver.cpp.obj.provides: CMakeFiles\correrTests.dir\src\Driver.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\correrTests.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\correrTests.dir\src\Driver.cpp.obj.provides.build
+.PHONY : CMakeFiles\correrTests.dir\src\Driver.cpp.obj.provides
+
+CMakeFiles\correrTests.dir\src\Driver.cpp.obj.provides.build: CMakeFiles\correrTests.dir\src\Driver.cpp.obj
+
+
 CMakeFiles\correrTests.dir\src\Instruccion.cpp.obj: CMakeFiles\correrTests.dir\flags.make
 CMakeFiles\correrTests.dir\src\Instruccion.cpp.obj: ..\src\Instruccion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Manuel\Documents\alumnos\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/correrTests.dir/src/Instruccion.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Manuel\Documents\alumnos\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/correrTests.dir/src/Instruccion.cpp.obj"
 	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\correrTests.dir\src\Instruccion.cpp.obj /FdCMakeFiles\correrTests.dir\ /FS -c C:\Users\Manuel\Documents\alumnos\src\Instruccion.cpp
 <<
@@ -270,7 +300,7 @@ CMakeFiles\correrTests.dir\src\Instruccion.cpp.obj.provides.build: CMakeFiles\co
 
 CMakeFiles\correrTests.dir\src\Programa.cpp.obj: CMakeFiles\correrTests.dir\flags.make
 CMakeFiles\correrTests.dir\src\Programa.cpp.obj: ..\src\Programa.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Manuel\Documents\alumnos\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/correrTests.dir/src/Programa.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Manuel\Documents\alumnos\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/correrTests.dir/src/Programa.cpp.obj"
 	C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\correrTests.dir\src\Programa.cpp.obj /FdCMakeFiles\correrTests.dir\ /FS -c C:\Users\Manuel\Documents\alumnos\src\Programa.cpp
 <<
@@ -306,6 +336,7 @@ correrTests_OBJECTS = \
 "CMakeFiles\correrTests.dir\tests\test_programa.cpp.obj" \
 "CMakeFiles\correrTests.dir\tests\test_ventana.cpp.obj" \
 "CMakeFiles\correrTests.dir\src\Calculadora.cpp.obj" \
+"CMakeFiles\correrTests.dir\src\Driver.cpp.obj" \
 "CMakeFiles\correrTests.dir\src\Instruccion.cpp.obj" \
 "CMakeFiles\correrTests.dir\src\Programa.cpp.obj"
 
@@ -318,6 +349,7 @@ correrTests.exe: CMakeFiles\correrTests.dir\tests\test_instruccion.cpp.obj
 correrTests.exe: CMakeFiles\correrTests.dir\tests\test_programa.cpp.obj
 correrTests.exe: CMakeFiles\correrTests.dir\tests\test_ventana.cpp.obj
 correrTests.exe: CMakeFiles\correrTests.dir\src\Calculadora.cpp.obj
+correrTests.exe: CMakeFiles\correrTests.dir\src\Driver.cpp.obj
 correrTests.exe: CMakeFiles\correrTests.dir\src\Instruccion.cpp.obj
 correrTests.exe: CMakeFiles\correrTests.dir\src\Programa.cpp.obj
 correrTests.exe: CMakeFiles\correrTests.dir\build.make
@@ -325,7 +357,7 @@ correrTests.exe: tests\google-test\gtest.lib
 correrTests.exe: tests\google-test\gtest_main.lib
 correrTests.exe: tests\google-test\gtest.lib
 correrTests.exe: CMakeFiles\correrTests.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Manuel\Documents\alumnos\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable correrTests.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Manuel\Documents\alumnos\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable correrTests.exe"
 	"C:\Program Files\JetBrains\CLion 2018.1.5\bin\cmake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\correrTests.dir --manifests  -- C:\PROGRA~2\MICROS~1\2017\COMMUN~1\VC\Tools\MSVC\1414~1.264\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\correrTests.dir\objects1.rsp @<<
  /out:correrTests.exe /implib:correrTests.lib /pdb:C:\Users\Manuel\Documents\alumnos\cmake-build-debug\correrTests.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console tests\google-test\gtest.lib tests\google-test\gtest_main.lib tests\google-test\gtest.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
@@ -341,6 +373,7 @@ CMakeFiles\correrTests.dir\requires: CMakeFiles\correrTests.dir\tests\test_instr
 CMakeFiles\correrTests.dir\requires: CMakeFiles\correrTests.dir\tests\test_programa.cpp.obj.requires
 CMakeFiles\correrTests.dir\requires: CMakeFiles\correrTests.dir\tests\test_ventana.cpp.obj.requires
 CMakeFiles\correrTests.dir\requires: CMakeFiles\correrTests.dir\src\Calculadora.cpp.obj.requires
+CMakeFiles\correrTests.dir\requires: CMakeFiles\correrTests.dir\src\Driver.cpp.obj.requires
 CMakeFiles\correrTests.dir\requires: CMakeFiles\correrTests.dir\src\Instruccion.cpp.obj.requires
 CMakeFiles\correrTests.dir\requires: CMakeFiles\correrTests.dir\src\Programa.cpp.obj.requires
 

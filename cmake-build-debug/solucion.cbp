@@ -228,6 +228,9 @@
 		<Unit filename="C:/Users/Manuel/Documents/alumnos/src/DiccionarioTrie.hpp">
 			<Option target="correrTests"/>
 		</Unit>
+		<Unit filename="C:/Users/Manuel/Documents/alumnos/src/Driver.cpp">
+			<Option target="correrTests"/>
+		</Unit>
 		<Unit filename="C:/Users/Manuel/Documents/alumnos/src/Driver.h">
 			<Option target="correrTests"/>
 		</Unit>
