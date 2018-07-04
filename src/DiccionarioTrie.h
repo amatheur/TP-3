@@ -15,12 +15,11 @@ public:
 
     ~DiccionarioTrie();
 
-
-
     bool Definido(const string &clave) const;
 
     T& Significado(const string &clave);
 
+    T& Significado(const string &clave) const;
 
 private:
     struct Nodo {

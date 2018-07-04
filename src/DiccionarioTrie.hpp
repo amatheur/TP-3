@@ -77,6 +77,15 @@ T& DiccionarioTrie<T>::Significado(const string &clave) {
     return *(actual->significado);
 }
 
+template <typename T>
+T& DiccionarioTrie<T>::Significado(const string &clave) const{
+    Nodo *actual = _raiz;
+    for (int i = 0; i < clave.size(); i++) {
+        actual = actual->siguientes[int(clave[i])];
+    }
+    return *(actual->significado);
+}
+
 
 template <typename T>
 void DiccionarioTrie::_destroy(Nodo* &raiz) {
