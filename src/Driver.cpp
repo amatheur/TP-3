@@ -22,7 +22,7 @@ void Driver::end(string rutina) {
 }
 
 void Driver::push(int n) {
-    _prog.AgregarInstruccion(n);
+    ;
 }
 
 void Driver::add() {
