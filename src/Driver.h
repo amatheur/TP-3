@@ -2,8 +2,6 @@
 #define DRIVER_CALCULADORA_H
 
 #include <string>
-#include "Ventana.h"
-#include "Calculadora.h"
 
 using namespace std;
 
@@ -36,8 +34,6 @@ public:
 
 private:
 	// COMPLETAR
-    Calculadora _calc;
-	Programa _prog;
 };
 
 #endif
