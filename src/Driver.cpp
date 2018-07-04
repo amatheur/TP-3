@@ -46,11 +46,11 @@ void Driver::write(string variable) {
 }
 
 void Driver::jump(string rutina) {
-    
+    _prog.AgregarInstruccion(_actual,Instruccion(oJump,rutina));
 }
 
 void Driver::jumpz(string rutina) {
-
+    _prog.AgregarInstruccion(_actual,Instruccion(oJumpz,rutina));
 }
 
 void Driver::comenzarEjecucion(string rutina, int capacidadVentana) {
