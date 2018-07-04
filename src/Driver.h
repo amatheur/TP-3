@@ -12,25 +12,25 @@ public:
 	~Driver();
 
 	// Operaciones para agregar instrucciones
-	void begin(string rutina);
-	void end(string rutina);
+	void begin(const string &rutina);
+	void end(const string &rutina);
 	void push(int n);
 	void add();
 	void sub();
 	void mul();
-	void read(string variable);
-	void write(string variable);
-	void jump(string rutina);
-	void jumpz(string rutina);
+	void read(const string &variable);
+	void write(const string &variable);
+	void jump(const string &rutina);
+	void jumpz(const string &rutina);
 
 	// Operaciones para ejecutar programas
-	void comenzarEjecucion(string rutina, int capacidadVentana);
-	void asignarVariable(string idVariable, int valor);
+	void comenzarEjecucion(const string &rutina, int capacidadVentana);
+	void asignarVariable(const string &idVariable, int valor);
 	bool ejecucionFinalizada() const;
 	void ejecutarInstruccionActual();
 	int topePila() const; // Si la pila está vacía, devuelve 0.
-	int valorVariable(string idVariable) const;
-	int valorHistoricoVariable(string idVariable, int t) const;
+	int valorVariable(const string &idVariable) const;
+	int valorHistoricoVariable(const string &idVariable, int t) const;
 	int instanteActual() const;
 
 private:

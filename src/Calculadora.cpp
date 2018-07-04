@@ -1,12 +1,6 @@
 #include "Calculadora.h"
 
 Calculadora::Calculadora() {
-    _programa = DiccionarioTrie<Rut>();
-    _variables = DiccionarioTrie<Var>();
-    _nInstruccionActual = 0;
-    _instanteActual = 0;
-    _tamVentana = 0;
-    _cantRut = 0;
 }
 
 Calculadora::Calculadora(Programa &prog, Rutina rut, int tam) {

@@ -13,11 +13,11 @@ Driver::~Driver() {
 
 }
 
-void Driver::begin(string rutina) {
+void Driver::begin(const string &rutina) {
     _actual = rutina;
 }
 
-void Driver::end(string rutina) {
+void Driver::end(const string &utina) {
     _actual = "";
 }
 
@@ -37,27 +37,27 @@ void Driver::mul() {
     _prog.AgregarInstruccion(_actual,Instruccion(oMul));
 }
 
-void Driver::read(string variable) {
+void Driver::read(const string &variable) {
     _prog.AgregarInstruccion(_actual,Instruccion(oRead, variable));
 }
 
-void Driver::write(string variable) {
+void Driver::write(const string &variable) {
     _prog.AgregarInstruccion(_actual,Instruccion(oWrite, variable));
 }
 
-void Driver::jump(string rutina) {
+void Driver::jump(const string &rutina) {
     _prog.AgregarInstruccion(_actual,Instruccion(oJump,rutina));
 }
 
-void Driver::jumpz(string rutina) {
+void Driver::jumpz(const string &rutina) {
     _prog.AgregarInstruccion(_actual,Instruccion(oJumpz,rutina));
 }
 
-void Driver::comenzarEjecucion(string rutina, int capacidadVentana) {
+void Driver::comenzarEjecucion(const string &rutina, int capacidadVentana) {
     _calc = Calculadora(_prog, rutina, capacidadVentana);
 }
 
-void Driver::asignarVariable(string idVariable, int valor) {
+void Driver::asignarVariable(const string &idVariable, int valor) {
     _calc.AsignarVariable(idVariable, valor);
 }
 
@@ -77,11 +77,11 @@ int Driver::topePila() const {
     }
 }
 
-int Driver::valorVariable(string idVariable) const {
+int Driver::valorVariable(const string &idVariable) const {
     return _calc.ValorActual(idVariable);
 }
 
-int Driver::valorHistoricoVariable(string idVariable, int t) const {
+int Driver::valorHistoricoVariable(const string &idVariable, int t) const {
     return _calc.ValorHistorico(idVariable, t);
 }
 
