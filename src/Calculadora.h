@@ -14,21 +14,21 @@ public:
 
     Calculadora(Programa prog, Rutina rut, int tam);
 
-    bool Finalizo() const;
+    bool Finalizo();
 
     void EjecutarUnPaso();
 
     void AsignarVariable(Variable var, int val);
 
-    int InstanteActual() const;
+    int InstanteActual();
 
-    int IndiceInstActual() const;
+    int IndiceInstActual();
 
-    int ValorHistorico(Variable var, int inst) const;
+    int ValorHistorico(Variable var, int inst);
 
-    int ValorActual(Variable var) const;
+    int ValorActual(Variable var);
 
-    Pila<int> pila() const;
+    Pila<int> pila();
 
 private:
     struct InstConIt;
@@ -70,12 +70,6 @@ private:
     Pila<int> _pila;
 
     int _tamVentana;
-
-    void Sigo() const;
-
-    int DevolverYSacarDePila();
-
-    int BuscarEnVentana(Ventana& v, int instante, int inicio, int fin) const;
 
 };
 
