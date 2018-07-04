@@ -14,7 +14,7 @@ public:
 
     Calculadora(Programa prog, Rutina rut, int tam);
 
-    bool Finalizo();
+    bool Finalizo() const;
 
     void EjecutarUnPaso();
 
@@ -70,6 +70,10 @@ private:
     Pila<int> _pila;
 
     int _tamVentana;
+
+    void Sigo() const;
+
+    int DevolverYSacarDePila();
 
 };
 
