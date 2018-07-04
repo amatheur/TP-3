@@ -201,3 +201,10 @@ int Calculadora::ValorActual(Variable var) const{
 Pila<int> Calculadora::pila() const {
     return _pila;
 }
+
+Calculadora::InstConIt::InstConIt(Operacion op, ItVar var, ItRut rut, int val) {
+    _op = op;
+    _var = var;
+    _rut = rut;
+    _val = val;
+}
