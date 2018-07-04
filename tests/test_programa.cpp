@@ -3,16 +3,6 @@
 #include "../src/Instruccion.h"
 #include "../src/Programa.h"
 
-TEST(test_programa, Rutina){
-    Programa::Rutina rut("MAIN");
-    EXPECT_EQ(rut.longitud(), 0);
-    EXPECT_EQ(rut.idRutina(), "MAIN");
-    rut.agregarInstruccion(Instruccion(PUSH, 2));
-    EXPECT_EQ(rut.longitud(), 1);
-    EXPECT_EQ(rut.instrucciones()[0].operacion(), PUSH);
-    EXPECT_EQ(rut.instrucciones()[0].valor(), 2);
-}
-
 TEST(test_programa, rutinaExistente) {
     Programa p;
     EXPECT_EQ(p.esRutinaExistente("a"), false);
