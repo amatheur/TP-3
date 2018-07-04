@@ -42,8 +42,8 @@ TEST(test_instruccion, i_jump) {
 }
 
 TEST(test_instruccion, i_jumpz) {
-    Instruccion i(JUMPZ, "quux");
-    EXPECT_EQ(i.operacion(), JUMPZ);
-    EXPECT_EQ(i.nombre(), "quux");
+    Instruccion i(oJumpz, "quux");
+    EXPECT_EQ(i.operacion(), oJumpz);
+    EXPECT_EQ(i.Rutina(), "quux");
 }
 
