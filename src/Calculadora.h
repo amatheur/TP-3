@@ -11,8 +11,9 @@ class Calculadora {
 
 public:
 
+    Calculadora();
 
-    Calculadora(Programa prog, Rutina rut, int tam);
+    Calculadora(Programa &prog, Rutina rut, int tam);
 
     bool Finalizo() const;
 
@@ -53,7 +54,7 @@ private:
 
     };
 
-    DiccionarioTrie<Lista_Enlazada<InstConIt>> _programa;
+    DiccionarioTrie<Rut> _programa;
 
     DiccionarioTrie<Var> _variables;
 
@@ -71,7 +72,9 @@ private:
 
     int _tamVentana;
 
-    void Sigo() const;
+    int _cantRut;
+
+    void Sigo();
 
     int DevolverYSacarDePila();
 

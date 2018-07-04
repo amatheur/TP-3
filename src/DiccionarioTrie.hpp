@@ -1,6 +1,6 @@
 template <typename T>
-DiccionarioTrie<T>::DiccionarioTrie(): _raiz(NULL){
-
+DiccionarioTrie<T>::DiccionarioTrie() {
+    _raiz = NULL;
 }
 
 template <typename T>
@@ -18,7 +18,7 @@ DiccionarioTrie<T>::~DiccionarioTrie(){
 }
 
 template <typename T>
-typename DiccionarioTrie<T>::ItDiccTrie DiccionarioTrie<T>::Definir(const string& clave, T &significado) {
+typename DiccionarioTrie<T>::ItDiccTrie DiccionarioTrie<T>::Definir(const string& clave, T significado) {
     if (_raiz == NULL) {
         _raiz = new Nodo;
     }
@@ -35,7 +35,7 @@ typename DiccionarioTrie<T>::ItDiccTrie DiccionarioTrie<T>::Definir(const string
 
     actual->significado = new T(significado);
 
-    return ItDiccTrie::ItDiccTrie(actual, padres, clave);
+    return ItDiccTrie(actual, padres, clave);
 }
 
 
@@ -71,19 +71,24 @@ bool DiccionarioTrie<T>::Definido(const string &clave) const{
 template <typename T>
 T& DiccionarioTrie<T>::Significado(const string &clave) {
     Nodo *actual = _raiz;
-    for (int i = 0; i < clave.size(); i++) {
-        actual = actual->siguientes[int(clave[i])];
+    if(_raiz != NULL) {
+        for (int i = 0; i < clave.size(); i++) {
+            actual = actual->siguientes[int(clave[i])];
+        }
+        return *(actual->significado);
     }
-    return *(actual->significado);
 }
 
 template <typename T>
 T& DiccionarioTrie<T>::Significado(const string &clave) const{
     Nodo *actual = _raiz;
-    for (int i = 0; i < clave.size(); i++) {
-        actual = actual->siguientes[int(clave[i])];
+    if(_raiz != NULL) {
+        for (int i = 0; i < clave.size(); i++) {
+            int letra = int(clave[i]);
+            actual = actual->siguientes[letra];
+        }
+        return *(actual->significado);
     }
-    return *(actual->significado);
 }
 
 
@@ -125,13 +130,13 @@ template <typename T>
 typename DiccionarioTrie<T>::ItDiccTrie DiccionarioTrie<T>::BuscarIterador(string clave) {
     Nodo* actual = _raiz;
     Pila<Nodo*> padres;
-
-    for (int i = 0; i < clave.size(); i++) {
-        padres.push(actual);
-        actual = actual->siguientes[int(clave[i])];
+    if(actual != NULL) {
+        for (int i = 0; i < clave.size(); i++) {
+            padres.push(actual);
+            actual = actual->siguientes[int(clave[i])];
+        }
     }
-
-    return ItDiccTrie::ItDiccTrie(actual, padres, clave);
+    return ItDiccTrie(actual, padres, clave);
 }
 
 template <typename T>
@@ -158,31 +163,45 @@ typename DiccionarioTrie<T>::ItDiccTrie DiccionarioTrie<T>::CrearIt() {
     Nodo* actual = _raiz;
     Pila<Nodo*> padres;
     string clave;
-    ItDiccTrie s = ItDiccTrie();
-    int sig;
-    while(actual->significado == NULL && s.ItDiccTrie::HaySiguiente(actual, -1)){
-        padres.push(actual);
-        sig = s.ItDiccTrie::Siguiente(actual, -1);
-        actual = actual->siguientes[sig];
-        clave += (char)sig;
+    if(actual != NULL) {
+        ItDiccTrie s = ItDiccTrie();
+        int sig;
+        while (actual->significado == NULL && s.HaySiguiente(actual, -1)) {
+            padres.push(actual);
+            sig = s.ItDiccTrie::Siguiente(actual, -1);
+            actual = actual->siguientes[sig];
+            clave += (char) sig;
+        }
     }
-    return ItDiccTrie::ItDiccTrie(actual, padres, clave);
+    return ItDiccTrie(actual, padres, clave);
 }
 
 template <typename T>
 tuple<string, T&> DiccionarioTrie<T>::ItDiccTrie::Actual() {
-    return (_clave, *(_actual->significado));
+    T significado;
+    if(_actual != NULL) {
+        significado = *(_actual->significado);
+    }
+    tuple<string, T &> res(_clave, significado);
+
+    return res;
 }
 
 template <typename T>
 tuple<string, T&> DiccionarioTrie<T>::ItDiccTrie::Actual() const{
-    return (_clave, *(_actual->significado));
+    T significado;
+    if(_actual != NULL) {
+        significado = *(_actual->significado);
+    }
+    tuple<string, T &> res(_clave, significado);
+
+    return res;
 }
 
 template <typename T>
 void DiccionarioTrie<T>::ItDiccTrie::Avanzar() {
     AvanzarAux();
-    while (_actual->significado != NULL){
+    while (_actual->significado == NULL){
         AvanzarAux();
     }
 }

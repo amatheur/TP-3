@@ -12,9 +12,14 @@ file(GLOB TEST_SOURCES tests/*.cpp)
 add_subdirectory(tests/google-test)
 
 # Creamos el ejecutable para correr los tests
-add_executable(correrTests ${TEST_SOURCES} ${SOURCE_FILES} src/Driver.cpp)
+add_executable(correrTests ${TEST_SOURCES} ${SOURCE_FILES} src/Driver.cpp tests/test_diccionariotrie.cpp)
 
 # Necesitamos asociar los archivos del framework de testing
 target_link_libraries(correrTests gtest gtest_main)
 
 add_test(correrTests correrTests)
+
+# Target para correr Valgrind
+add_custom_target(correrValgrind
+        valgrind --leak-check=full -v ./correrTests 2>&1
+        DEPENDS correrTests)

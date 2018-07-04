@@ -5,7 +5,7 @@
 #include "Driver.h"
 #include "Calculadora.h"
 
-Driver::Driver(){
+Driver::Driver() {
     _prog = Programa();
 }
 
@@ -14,11 +14,11 @@ Driver::~Driver() {
 }
 
 void Driver::begin(string rutina) {
-    _prog.instruccion(rutina,0);
+    _actual = rutina;
 }
 
 void Driver::end(string rutina) {
-    _prog.instruccion(rutina,_prog.Longitud(rutina)-1);
+    _actual = "";
 }
 
 void Driver::push(int n) {
@@ -54,33 +54,37 @@ void Driver::jumpz(string rutina) {
 }
 
 void Driver::comenzarEjecucion(string rutina, int capacidadVentana) {
-
+    _calc = Calculadora(_prog, rutina, capacidadVentana);
 }
 
 void Driver::asignarVariable(string idVariable, int valor) {
-
+    _calc.AsignarVariable(idVariable, valor);
 }
 
 bool Driver::ejecucionFinalizada() const {
-    return false;
+    return _calc.Finalizo();
 }
 
 void Driver::ejecutarInstruccionActual() {
-
+    _calc.EjecutarUnPaso();
 }
 
 int Driver::topePila() const {
-    return 0;
+    if(!_calc.pila().empty()) {
+        return _calc.pila().top();
+    }else{
+        return 0;
+    }
 }
 
 int Driver::valorVariable(string idVariable) const {
-    return 0;
+    return _calc.ValorActual(idVariable);
 }
 
 int Driver::valorHistoricoVariable(string idVariable, int t) const {
-    return 0;
+    return _calc.ValorHistorico(idVariable, t);
 }
 
 int Driver::instanteActual() const {
-    return 0;
+    return _calc.InstanteActual();
 }

@@ -1,11 +1,21 @@
 #include "Calculadora.h"
 
-Calculadora::Calculadora(Programa prog, Rutina rut, int tam) {
-    _programa = DiccionarioTrie();
-    _variables = DiccionarioTrie();
+Calculadora::Calculadora() {
+    _programa = DiccionarioTrie<Rut>();
+    _variables = DiccionarioTrie<Var>();
+    _nInstruccionActual = 0;
+    _instanteActual = 0;
+    _tamVentana = 0;
+    _cantRut = 0;
+}
+
+Calculadora::Calculadora(Programa &prog, Rutina rut, int tam) {
+    _programa = DiccionarioTrie<Rut>();
+    _variables = DiccionarioTrie<Var>();
     _nInstruccionActual = 0;
     _instanteActual = 0;
     _tamVentana = tam;
+    _cantRut = prog.CantidadRutinas();
     int nRutina = 0;
     Programa::ItPrograma itProg = prog.CrearIt();
     int nInstruccion;
@@ -34,7 +44,7 @@ Calculadora::Calculadora(Programa prog, Rutina rut, int tam) {
             if(instActual.operacion() == oWrite or instActual.operacion() == oRead){
                 ItVar itVariable;
                 if(!_variables.Definido(instActual.variable())){
-                    _ventanas.push_front(Ventana(tam));
+                    _ventanas.push_front(Ventana<tuple<int, int>>(tam));
                     ItListVent itVentana = _ventanas.begin();
                     Lista_Enlazada<int> listVar;
                     Var nuevaVar(itVentana, listVar);
@@ -43,7 +53,7 @@ Calculadora::Calculadora(Programa prog, Rutina rut, int tam) {
                     itVariable = _variables.BuscarIterador(instActual.variable());
                 }
                 InstConIt instConIt(instActual.operacion(), itVariable, _programa.CrearIt(), 0);
-                get<1>(itNuevaRut.Actual()).push_back(instConIt);
+                (get<1>(itNuevaRut.Actual())).push_back(instConIt);
 
             } else if(instActual.operacion() == oPush){
                 int val = instActual.Valor();
@@ -65,10 +75,10 @@ Calculadora::Calculadora(Programa prog, Rutina rut, int tam) {
 }
 
 bool Calculadora::Finalizo() const{
-    return (_nInstruccionActual >= get<1>(_rutinaActual.Actual()).size());
+    return (_nInstruccionActual > (get<1>(_rutinaActual.Actual())).size() - 1 or _cantRut == 0);
 }
 
-void Calculadora::Sigo() const {
+void Calculadora::Sigo(){
     if(_nInstruccionActual < get<1>(_rutinaActual.Actual()).size() - 1){
         _instruccionAEjecutar++;
     }
@@ -89,6 +99,7 @@ void Calculadora::EjecutarUnPaso() {
 
     int s1 = 0;
     int s2 = 0;
+    tuple<int, int> aRegistrar;
 
     switch (operacionActual){
         case oPush:
@@ -120,7 +131,8 @@ void Calculadora::EjecutarUnPaso() {
         case oWrite:
             s1 = DevolverYSacarDePila();
             get<1>(get<1>(instActual._var.Actual())).push_back(s1);
-            tuple<int, int> aRegistrar(_instanteActual, s1);
+            get<0>(aRegistrar) = _instanteActual;
+            get<1>(aRegistrar) = s1;
             (*(get<0>(get<1>(instActual._var.Actual())))).registrar(aRegistrar);
             _nInstruccionActual++;
             Sigo();
@@ -156,7 +168,7 @@ void Calculadora::EjecutarUnPaso() {
 
 void Calculadora::AsignarVariable(Variable var, int val) {
     get<1>(_variables.Significado(var)).back() = val;
-    tuple aRegistrar(_instanteActual, val);
+    tuple<int, int> aRegistrar(_instanteActual, val);
     (*(get<0>(_variables.Significado(var)))).registrar(aRegistrar);
 }
 

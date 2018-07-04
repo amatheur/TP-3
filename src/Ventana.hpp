@@ -1,3 +1,4 @@
+#include "Ventana.h"
 
 template<class T>
 Ventana<T>::Ventana(int capacidad) {

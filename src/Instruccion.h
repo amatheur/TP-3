@@ -64,12 +64,7 @@ private:
     Variable _var;
     Rutina _rut;
     int _val;
-    /*
-    Operacion _operacion;
-    int _valor;
-    Id _nombre;
-	// COMPLETAR
-     */
+
 };
 
 #endif /*__INSTRUCCION_H__*/

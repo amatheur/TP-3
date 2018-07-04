@@ -1,7 +1,7 @@
 #include "Programa.h"
 
 Programa::Programa() {
-    _rutinas = DiccionarioTrie();
+    _rutinas = DiccionarioTrie<Lista_Enlazada<Instruccion>>();
     _cantRut = 0;
 }
 
@@ -25,19 +25,19 @@ int Programa::Longitud(Rutina rut) const {
 }
 
 Instruccion Programa::instruccion(Rutina rut, int indice) const {
-    Lista_Enlazada::iterator it = _rutinas.Significado(rut).begin();
+    Lista_Enlazada<Instruccion>::iterator it = _rutinas.Significado(rut).begin();
     advance(it, indice);
     return *(it);
 }
 
-Programa::ItPrograma::ItPrograma(DiccionarioTrie::ItDiccTrie it): {
+Programa::ItPrograma::ItPrograma(DiccionarioTrie<Lista_Enlazada<Instruccion>>::ItDiccTrie it) {
     _it = it;
 }
 
 
 Programa::ItPrograma Programa::CrearIt() {
-    DiccionarioTrie::ItDiccTrie it = _rutinas.CrearIt();
-    return ItPrograma::ItPrograma(it);
+    DiccionarioTrie<Lista_Enlazada<Instruccion>>::ItDiccTrie it = _rutinas.CrearIt();
+    return ItPrograma(it);
 }
 
 tuple<Rutina, Lista_Enlazada<Instruccion>&> Programa::ItPrograma::Actual() {

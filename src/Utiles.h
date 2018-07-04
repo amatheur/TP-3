@@ -4,9 +4,7 @@
 #include <stack>
 #include <list>
 #include <vector>
-#include <queue>
-#include <map>
-#include <set>
+#include <tuple>
 
 //typedef int Operacion;
 
@@ -19,8 +17,6 @@ typedef std::string Rutina;
 template <typename T>
 using Pila = std::stack<T>;
 
-template <typename T>
-using Cola = std::queue<T>;
 
 template <typename T>
 using Lista_Enlazada = std::list<T>;
