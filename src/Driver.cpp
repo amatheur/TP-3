@@ -22,31 +22,31 @@ void Driver::end(string rutina) {
 }
 
 void Driver::push(int n) {
-    ;
+    _prog.AgregarInstruccion(_actual,Instruccion(n));
 }
 
 void Driver::add() {
-
+    _prog.AgregarInstruccion(_actual,Instruccion(oAdd));
 }
 
 void Driver::sub() {
-
+    _prog.AgregarInstruccion(_actual,Instruccion(oSub));
 }
 
 void Driver::mul() {
-
+    _prog.AgregarInstruccion(_actual,Instruccion(oMul));
 }
 
 void Driver::read(string variable) {
-
+    _prog.AgregarInstruccion(_actual,Instruccion(oRead, variable));
 }
 
 void Driver::write(string variable) {
-
+    _prog.AgregarInstruccion(_actual,Instruccion(oWrite, variable));
 }
 
 void Driver::jump(string rutina) {
-
+    
 }
 
 void Driver::jumpz(string rutina) {
