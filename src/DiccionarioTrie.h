@@ -40,7 +40,9 @@ public:
 
     public:
 
-        tuple<string, T> Actual();
+        tuple<string, T&> Actual();
+
+        tuple<string, T&> Actual() const;
 
         void Avanzar();
 

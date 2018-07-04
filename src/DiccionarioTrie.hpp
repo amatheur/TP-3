@@ -170,7 +170,12 @@ DiccionarioTrie<T>::ItDiccTrie DiccionarioTrie<T>::CrearIt() {
 }
 
 template <typename T>
-tuple<string, T> DiccionarioTrie<T>::ItDiccTrie::Actual() {
+tuple<string, T&> DiccionarioTrie<T>::ItDiccTrie::Actual() {
+    return (_clave, *(_actual->significado));
+}
+
+template <typename T>
+tuple<string, T&> DiccionarioTrie<T>::ItDiccTrie::Actual() const{
     return (_clave, *(_actual->significado));
 }
 

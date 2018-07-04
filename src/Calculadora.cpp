@@ -1,129 +1,166 @@
 #include "Calculadora.h"
 
-Calculadora::Variable::Variable(Id idVariable) {
-    _idVariable = idVariable;
-    _valor = 0;
-}
+Calculadora::Calculadora(Programa prog, Rutina rut, int tam) {
+    _programa = DiccionarioTrie();
+    _variables = DiccionarioTrie();
+    _nInstruccionActual = 0;
+    _instanteActual = 0;
+    _tamVentana = tam;
+    int nRutina = 0;
+    Programa::ItPrograma itProg = prog.CrearIt();
+    int nInstruccion;
 
-void Calculadora::Variable::asignarValor(int valor) {
-    _valor = valor;
-}
+    while(nRutina < prog.CantidadRutinas()){
 
-int Calculadora::Variable::valor() const{
-    return _valor;
-}
+        nInstruccion = 0;
 
-Id Calculadora::Variable::id() const{
-    return _idVariable;
-}
+        Rutina nombreRutActual = get<0>(itProg.Actual());
 
-Calculadora::Calculadora(Programa programa) {
-    _programa = programa;
-}
+        ItRut itNuevaRut;
 
-int Calculadora::posVariable(Id idVariable) const{
-    int res = -1;
-    for(int i = 0; i < _memoria.size(); i++){
-        if(idVariable == _memoria[i].id()){
-            res = i;
+        if(_programa.Definido(nombreRutActual)){
+
+            itNuevaRut = _programa.BuscarIterador(nombreRutActual);
+        } else{
+            Rut list;
+
+            itNuevaRut = _programa.Definir(nombreRutActual, list);
         }
-    }
-    return res;
-}
+        Lista_Enlazada<Instruccion>::iterator itInstActual = get<1>(itProg.Actual()).begin();
 
-bool Calculadora::variableExiste(Id idVariable) const{
-    return posVariable(idVariable) != -1;
-}
+        while(nInstruccion < get<1>(itProg.Actual()).size()){
 
-void Calculadora::asignarVariable(Id idVariable, int valor) {
-    if(variableExiste(idVariable)){
-        _memoria[posVariable(idVariable)].asignarValor(valor);
-    }else{
-        Variable var = Variable(idVariable);
-        var.asignarValor(valor);
-        _memoria.push_back(var);
-    }
-}
-
-int Calculadora::valorVariable(Id idVariable) const {
-    if (variableExiste(idVariable)) {
-        return _memoria[posVariable(idVariable)].valor();
-    } else {
-        return 0;
-    }
-}
-
-int Calculadora::devolverYSacarDePila(){
-    int res = 0;
-    if(_pila.size() != 0){
-        res = _pila[_pila.size() - 1];
-        _pila.pop_back();
-    }
-    return res;
-}
-
-void Calculadora::ejecutar(Id Rutina) {
-    int numeroInstruccion = 0;
-    Id rutinaActual = Rutina;
-    Instruccion instActual = _programa.instruccion(rutinaActual, numeroInstruccion);
-
-    int longRutinaActual = _programa.longitud(rutinaActual);
-
-    bool enRango = 0 <= numeroInstruccion && numeroInstruccion < longRutinaActual;
-
-    while(_programa.esRutinaExistente(rutinaActual) && enRango){
-        int s1 = 0;
-        int s2 = 0;
-
-        switch (instActual.operacion()){
-            case PUSH:
-                _pila.push_back(instActual.valor());
-                break;
-            case ADD:
-                s1 = devolverYSacarDePila();
-                s2 = devolverYSacarDePila();
-                _pila.push_back(s1 + s2);
-                break;
-            case SUB:
-                s1 = devolverYSacarDePila();
-                s2 = devolverYSacarDePila();
-                _pila.push_back(s2 - s1);
-                break;
-            case MUL:
-                s1 = devolverYSacarDePila();
-                s2 = devolverYSacarDePila();
-                _pila.push_back(s2*s1);
-                break;
-            case WRITE:
-                s1 = devolverYSacarDePila();
-                asignarVariable(instActual.nombre(), s1);
-                break;
-            case READ:
-                _pila.push_back(valorVariable(instActual.nombre()));
-                break;
-            case JUMP:
-                rutinaActual = instActual.nombre();
-                numeroInstruccion =-1;
-                break;
-            case JUMPZ:
-                s1 = devolverYSacarDePila();
-                if(s1 == 0){
-                    rutinaActual = instActual.nombre();
-                    numeroInstruccion = -1;
+            Instruccion instActual= *(itInstActual);
+            if(instActual.operacion() == oWrite or instActual.operacion() == oRead){
+                ItVar itVariable;
+                if(!_variables.Definido(instActual.Variable())){
+                    _ventanas.push_front(Ventana(tam));
+                    ItListVent itVentana = _ventanas.begin();
+                    Lista_Enlazada<int> listVar;
+                    Var nuevaVar(itVentana, listVar);
+                    itVariable = _variables.Definir(instActual.Variable(), nuevaVar);
+                } else {
+                    itVariable = _variables.BuscarIterador(instActual.Variable());
                 }
-                break;
-        }
-        numeroInstruccion += 1;
-        
-        if(_programa.esRutinaExistente(rutinaActual)){
-            longRutinaActual = _programa.longitud(rutinaActual);
-            enRango = 0 <= numeroInstruccion && numeroInstruccion < longRutinaActual;
-            if(enRango) {
-                instActual = _programa.instruccion(rutinaActual, numeroInstruccion);
+                InstConIt instConIt(instActual.operacion(), itVariable, _programa.CrearIt(), 0);
+                get<1>(itNuevaRut.Actual()).push_back(instConIt);
+
+            } else if(instActual.operacion() == oPush){
+                int val = instActual.Valor();
+                InstConIt instConIt(oPush, _variables.CrearIt(), _programa.CrearIt(), val);
+                get<1>(itNuevaRut.Actual()).push_back(instConIt);
+
+            } else {
+                InstConIt instConIt(instActual.operacion(), _variables.CrearIt(), _programa.CrearIt(), 0);
+                get<1>(itNuevaRut.Actual()).push_back(instConIt);
             }
+            nInstruccion ++;
+            itInstActual++;
         }
+        itProg.Avanzar();
+        nRutina ++;
+    }
+    _rutinaActual = _programa.BuscarIterador(rut);
+    _instruccionAEjecutar = get<1>(_rutinaActual.Actual()).begin();
+}
 
+bool Calculadora::Finalizo() const{
+    return (_nInstruccionActual >= get<1>(_rutinaActual.Actual()).size());
+}
 
+void Calculadora::Sigo() const {
+    if(_nInstruccionActual < get<1>(_rutinaActual.Actual()).size() - 1){
+        _instruccionAEjecutar++;
     }
 }
+
+int Calculadora::DevolverYSacarDePila() {
+    int res = 0;
+    if(!_pila.empty()){
+        res = _pila.top();
+        _pila.pop();
+    }
+    return res;
+}
+
+void Calculadora::EjecutarUnPaso() {
+    InstConIt instActual = *(_instruccionAEjecutar);
+    Operacion operacionActual = instActual._op;
+
+    int s1 = 0;
+    int s2 = 0;
+
+    switch (operacionActual){
+        case oPush:
+            _pila.push(instActual._val);
+            _nInstruccionActual++;
+            Sigo();
+            break;
+        case oAdd:
+            s1 = DevolverYSacarDePila();
+            s2 = DevolverYSacarDePila();
+            _pila.push(s1 + s2);
+            _nInstruccionActual++;
+            Sigo();
+            break;
+        case oSub:
+            s1 = DevolverYSacarDePila();
+            s2 = DevolverYSacarDePila();
+            _pila.push(s2 - s1);
+            _nInstruccionActual++;
+            Sigo();
+            break;
+        case oMul:
+            s1 = DevolverYSacarDePila();
+            s2 = DevolverYSacarDePila();
+            _pila.push(s2*s1);
+            _nInstruccionActual++;
+            Sigo();
+            break;
+        case oWrite:
+            s1 = DevolverYSacarDePila();
+            get<1>(get<1>(instActual._var.Actual())).push_back(s1);
+            tuple<int, int> aRegistrar(_instanteActual, s1);
+            (*(get<0>(get<1>(instActual._var.Actual())))).registrar(aRegistrar);
+            _nInstruccionActual++;
+            Sigo();
+            break;
+        case oRead:
+            _pila.push(get<1>(get<1>(instActual._var.Actual())).back());
+            _nInstruccionActual++;
+            Sigo();
+            break;
+        case oJump:
+            _rutinaActual = instActual._rut;
+            _nInstruccionActual = 0;
+            if(_nInstruccionActual < get<1>(_rutinaActual.Actual()).size() - 1){
+                _instruccionAEjecutar = get<1>(_rutinaActual.Actual()).begin();
+            }
+            break;
+        case oJumpz:
+            s1 = DevolverYSacarDePila();
+            if(s1 == 0){
+                _rutinaActual = instActual._rut;
+                _nInstruccionActual = 0;
+                if(_nInstruccionActual < get<1>(_rutinaActual.Actual()).size() - 1){
+                    _instruccionAEjecutar = get<1>(_rutinaActual.Actual()).begin();
+                }
+            } else {
+                _nInstruccionActual++;
+                Sigo();
+            }
+            break;
+    }
+    _instanteActual++;
+}
+
+void Calculadora::AsignarVariable(Variable var, int val) {
+    get<1>(_variables.Significado(var)).back() = val;
+    tuple aRegistrar(_instanteActual, val);
+    (*(get<0>(_variables.Significado(var)))).registrar(aRegistrar);
+}
+
+
+
+
 
