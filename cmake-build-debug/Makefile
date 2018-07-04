@@ -211,6 +211,33 @@ src\Calculadora.cpp.s:
 	$(MAKE) -f CMakeFiles\correrTests.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\correrTests.dir\src\Calculadora.cpp.s
 .PHONY : src\Calculadora.cpp.s
 
+src\Driver.obj: src\Driver.cpp.obj
+
+.PHONY : src\Driver.obj
+
+# target to build an object file
+src\Driver.cpp.obj:
+	$(MAKE) -f CMakeFiles\correrTests.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\correrTests.dir\src\Driver.cpp.obj
+.PHONY : src\Driver.cpp.obj
+
+src\Driver.i: src\Driver.cpp.i
+
+.PHONY : src\Driver.i
+
+# target to preprocess a source file
+src\Driver.cpp.i:
+	$(MAKE) -f CMakeFiles\correrTests.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\correrTests.dir\src\Driver.cpp.i
+.PHONY : src\Driver.cpp.i
+
+src\Driver.s: src\Driver.cpp.s
+
+.PHONY : src\Driver.s
+
+# target to generate assembly for a file
+src\Driver.cpp.s:
+	$(MAKE) -f CMakeFiles\correrTests.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\correrTests.dir\src\Driver.cpp.s
+.PHONY : src\Driver.cpp.s
+
 src\Instruccion.obj: src\Instruccion.cpp.obj
 
 .PHONY : src\Instruccion.obj
@@ -417,6 +444,9 @@ help:
 	@echo ... src/Calculadora.obj
 	@echo ... src/Calculadora.i
 	@echo ... src/Calculadora.s
+	@echo ... src/Driver.obj
+	@echo ... src/Driver.i
+	@echo ... src/Driver.s
 	@echo ... src/Instruccion.obj
 	@echo ... src/Instruccion.i
 	@echo ... src/Instruccion.s
