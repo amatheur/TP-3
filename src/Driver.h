@@ -36,8 +36,7 @@ public:
 private:
 
 	Programa _prog;
-	Calculadora _calc;
-	Rutina _acutal;
+	Rutina _actual;
 };
 
 #endif
