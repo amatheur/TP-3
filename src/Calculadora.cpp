@@ -1,67 +1,73 @@
 #include "Calculadora.h"
 
-Calculadora::Variable::Variable(Id idVariable) {
-    _idVariable = idVariable;
-    _valor = 0;
-}
+Calculadora::Calculadora(Programa prog, Rutina rut, int tam) {
+    _programa = DiccionarioTrie();
+    _variables = DiccionarioTrie();
+    _nInstruccionActual = 0;
+    _instanteActual = 0;
+    _tamVentana = tam;
+    int nRutina = 0;
+    Programa::ItPrograma itProg = prog.CrearIt();
+    int nInstruccion;
 
-void Calculadora::Variable::asignarValor(int valor) {
-    _valor = valor;
-}
+    while(nRutina < prog.CantidadRutinas()){
 
-int Calculadora::Variable::valor() const{
-    return _valor;
-}
+        nInstruccion = 0;
 
-Id Calculadora::Variable::id() const{
-    return _idVariable;
-}
+        Rutina nombreRutActual = get<0>(itProg.Actual());
 
-Calculadora::Calculadora(Programa programa) {
-    _programa = programa;
-}
+        ItRut itNuevaRut;
 
-int Calculadora::posVariable(Id idVariable) const{
-    int res = -1;
-    for(int i = 0; i < _memoria.size(); i++){
-        if(idVariable == _memoria[i].id()){
-            res = i;
+        if(_programa.Definido(nombreRutActual)){
+
+            itNuevaRut = _programa.BuscarIterador(nombreRutActual);
+        } else{
+            Rut list;
+
+            itNuevaRut = _programa.Definir(nombreRutActual, list);
         }
+        Lista_Enlazada<Instruccion>::iterator itInstActual = get<1>(itProg.Actual()).begin();
+
+        while(nInstruccion < get<1>(itProg.Actual()).size()){
+
+            Instruccion instActual= *(itInstActual);
+            if(instActual.operacion() == oWrite or instActual.operacion() == oRead){
+                ItVar itVariable;
+                if(!_variables.Definido(instActual.Variable())){
+                    _ventanas.push_front(Ventana(tam));
+                    ItListVent itVentana = _ventanas.begin();
+                    Lista_Enlazada<int> listVar;
+                    Var nuevaVar(itVentana, listVar);
+                    itVariable = _variables.Definir(instActual.Variable(), nuevaVar);
+                } else {
+                    itVariable = _variables.BuscarIterador(instActual.Variable());
+                }
+                InstConIt instConIt(instActual.operacion(), itVariable, _programa.CrearIt(), 0);
+                get<1>(itNuevaRut.Actual()).push_back(instConIt);
+
+            } else if(instActual.operacion() == oPush){
+                int val = instActual.Valor();
+                InstConIt instConIt(oPush, _variables.CrearIt(), _programa.CrearIt(), val);
+                get<1>(itNuevaRut.Actual()).push_back(instConIt);
+
+            } else {
+                InstConIt instConIt(instActual.operacion(), _variables.CrearIt(), _programa.CrearIt(), 0);
+                get<1>(itNuevaRut.Actual()).push_back(instConIt);
+            }
+            nInstruccion ++;
+            itInstActual++;
+        }
+        itProg.Avanzar();
+        nRutina ++;
     }
-    return res;
+    _rutinaActual = _programa.BuscarIterador(rut);
+    _instruccionAEjecutar = get<1>(_rutinaActual.Actual()).begin();
 }
 
-bool Calculadora::variableExiste(Id idVariable) const{
-    return posVariable(idVariable) != -1;
+bool Calculadora::Finalizo() {
+    return (_nInstruccionActual >= get<1>(_rutinaActual.Actual()).size())
 }
-
-void Calculadora::asignarVariable(Id idVariable, int valor) {
-    if(variableExiste(idVariable)){
-        _memoria[posVariable(idVariable)].asignarValor(valor);
-    }else{
-        Variable var = Variable(idVariable);
-        var.asignarValor(valor);
-        _memoria.push_back(var);
-    }
-}
-
-int Calculadora::valorVariable(Id idVariable) const {
-    if (variableExiste(idVariable)) {
-        return _memoria[posVariable(idVariable)].valor();
-    } else {
-        return 0;
-    }
-}
-
-int Calculadora::devolverYSacarDePila(){
-    int res = 0;
-    if(_pila.size() != 0){
-        res = _pila[_pila.size() - 1];
-        _pila.pop_back();
-    }
-    return res;
-}
-
+/*
 void Calculadora::ejecutar(Id Rutina) {
     int numeroInstruccion = 0;
     Id rutinaActual = Rutina;
@@ -126,4 +132,4 @@ void Calculadora::ejecutar(Id Rutina) {
 
     }
 }
-
+*/

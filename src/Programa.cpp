@@ -40,7 +40,11 @@ Programa::ItPrograma Programa::CrearIt() {
     return ItPrograma::ItPrograma(it);
 }
 
-tuple<Rutina, Lista_Enlazada<Instruccion>>& Programa::ItPrograma::Actual() {
+tuple<Rutina, Lista_Enlazada<Instruccion>&> Programa::ItPrograma::Actual() {
+    return _it.Actual();
+}
+
+tuple<Rutina, Lista_Enlazada<Instruccion>&> Programa::ItPrograma::Actual() const{
     return _it.Actual();
 }
 

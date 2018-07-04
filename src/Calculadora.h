@@ -2,55 +2,75 @@
 #define __CALCULADORA_H__
 
 #include "Programa.h"
+#include "Ventana.h"
 #include <iostream>
 #include <vector>
 #include <string>
 
 class Calculadora {
+
 public:
-    class Variable;
 
-    Calculadora(Programa programa);
 
-    void asignarVariable(string idVariable, int valor);
+    Calculadora(Programa prog, Rutina rut, int tam);
 
-    void ejecutar(string Rutina);
+    bool Finalizo();
 
-    int valorVariable(string idVariable) const;
+    void EjecutarUnPaso();
 
-    class Variable {
-    public:
-        // Crea una variable de id idVariable y valor 0
-        Variable(string idVariable);
+    void AsignarVariable(Variable var, int val);
 
-        //Asigna el valor "valor" a la variable
-        void asignarValor(int valor);
+    int InstanteActual();
 
-        //devuelve el valor de la variable
-        int valor() const;
+    int IndiceInstActual();
 
-        //devuelve el id de la variable
-        string id() const;
+    int ValorHistorico(Variable var, int inst);
 
-    private:
-        int _valor;
-        string _idVariable;
+    int ValorActual(Variable var);
+
+    Pila<int> pila();
+
+private:
+    struct InstConIt;
+
+    typedef tuple<Lista_Enlazada<Ventana<tuple<int, int>>>::iterator, Lista_Enlazada<int>> Var;
+    typedef Lista_Enlazada<InstConIt> Rut;
+    typedef DiccionarioTrie<tuple<Lista_Enlazada<Ventana<tuple<int, int>>>::iterator,Lista_Enlazada<int>>>::ItDiccTrie ItVar;
+    typedef DiccionarioTrie<Lista_Enlazada<InstConIt>>::ItDiccTrie ItRut;
+    typedef Lista_Enlazada<Ventana<tuple<int, int>>> ListVent;
+    typedef Lista_Enlazada<Ventana<tuple<int, int>>>::iterator ItListVent;
+
+
+
+    struct InstConIt{
+
+        Operacion _op;
+        ItVar _var;
+        ItRut _rut;
+        int _val;
+
+        InstConIt(Operacion op, ItVar var, ItRut rut, int val);
 
     };
 
-private:
-    vector<int> _pila;
-    vector<Variable> _memoria;
-    Programa _programa;
+    DiccionarioTrie<Lista_Enlazada<InstConIt>> _programa;
 
-    //devuelve la posicion de la variable en el vector de variables de la calculadora, si no existe, devuelve -1
-    int posVariable(string idVariable) const;
+    DiccionarioTrie<Var> _variables;
 
-    //devuelve true si la variable existe dentro del vector de variables de la calculadora, y false en caso contrario
-    bool variableExiste(string idVariable) const;
+    ListVent _ventanas;
 
-    //devuelve el ultimo valor del vector_pila, y lo elimina del mismo, si no hay valores almacenados en _pila, devuelve 0
-    int devolverYSacarDePila();
+    ItRut _rutinaActual;
+
+    Lista_Enlazada<InstConIt>::iterator _instruccionAEjecutar;
+
+    int _nInstruccionActual;
+
+    int _instanteActual;
+
+    Pila<int> _pila;
+
+    int _tamVentana;
+
 };
 
 #endif /*__CALCULADORA_H__*/

@@ -53,9 +53,11 @@ public:
 
     public:
 
-        tuple<Rutina, Lista_Enlazada<Instruccion>>& Actual();
+        tuple<Rutina, Lista_Enlazada<Instruccion>&> Actual();
 
-        void Avanzar();
+		tuple<Rutina, Lista_Enlazada<Instruccion>&> Actual() const;
+
+		void Avanzar();
 
     private:
 
