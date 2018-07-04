@@ -5,8 +5,8 @@
 #include "Driver.h"
 #include "Calculadora.h"
 
-Driver::Driver() {
-    Programa* P = new(Programa);
+Driver::Driver(){
+    _prog = Programa();
 }
 
 Driver::~Driver() {
@@ -14,15 +14,15 @@ Driver::~Driver() {
 }
 
 void Driver::begin(string rutina) {
-
+    _prog.instruccion(rutina,0);
 }
 
 void Driver::end(string rutina) {
-
+    _prog.instruccion(rutina,_prog.Longitud(rutina)-1);
 }
 
 void Driver::push(int n) {
-
+    _prog.AgregarInstruccion(n);
 }
 
 void Driver::add() {

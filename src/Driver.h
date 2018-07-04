@@ -2,7 +2,7 @@
 #define DRIVER_CALCULADORA_H
 
 #include <string>
-
+#include "Calculadora.h"
 
 using namespace std;
 
@@ -35,6 +35,8 @@ public:
 
 private:
 
+	Programa _prog;
+	Calculadora _calc;
 };
 
 #endif
