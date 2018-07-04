@@ -160,7 +160,44 @@ void Calculadora::AsignarVariable(Variable var, int val) {
     (*(get<0>(_variables.Significado(var)))).registrar(aRegistrar);
 }
 
+int Calculadora::InstanteActual() const{
+    return _instanteActual;
+}
 
+int Calculadora::IndiceInstActual() const {
+    return _nInstruccionActual;
+}
 
+int Calculadora::BuscarEnVentana(Ventana<tuple<int, int>> &v, int instante, int inicio, int fin) const{
+    if(inicio == fin){
+        return get<1>(v[inicio]);
+    }
+    int medio = (inicio + fin) / 2;
+    if(get<0>(v[medio]) <= instante){
+        if(get<0>(v[medio + 1]) > instante){
+            return get<1>(v[medio]);
+        } else {
+            return BuscarEnVentana(v, instante, medio + 1, fin);
+        }
+    } else {
+        return BuscarEnVentana(v, instante, inicio, medio);
+    }
+}
 
+int Calculadora::ValorHistorico(Variable var, int inst) const{
+    if(inst >= get<0>((*(get<0>(_variables.Significado(var))))[0])){
+        return BuscarEnVentana((*(get<0>(_variables.Significado(var)))), inst, 0, _tamVentana);
+    } else {
+        Lista_Enlazada<int>::iterator it = get<1>(_variables.Significado(var)).begin();
+        advance(it, inst);
+        return *(it);
+    }
+}
 
+int Calculadora::ValorActual(Variable var) const{
+    return get<1>(_variables.Significado(var)).back();
+}
+
+Pila<int> Calculadora::pila() const {
+    return _pila;
+}
