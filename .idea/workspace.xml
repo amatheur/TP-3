@@ -122,8 +122,8 @@
           <file leaf-file-name="test_programa.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tests/test_programa.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="464">
-                  <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+                <state relative-caret-position="524">
+                  <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
                   <folding>
                     <element signature="e#0#24#0" expanded="true" />
                   </folding>
@@ -361,11 +361,18 @@
       <option name="project" value="LOCAL" />
       <updated>1530681445007</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Programas">
+      <created>1530683651752</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1530683651752</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32709000" />
+    <option name="totallyTimeSpent" value="33017000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -440,7 +447,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Cambie las Instrucciones y Utiles.h con las definiciones de tipo que nos dieron ellos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambie las Instrucciones y Utiles.h con las definiciones de tipo que nos dieron ellos." />
+    <MESSAGE value="Programas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Programas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -764,8 +772,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test_programa.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="524">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
