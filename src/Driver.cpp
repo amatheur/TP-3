@@ -3,9 +3,10 @@
 //
 
 #include "Driver.h"
+#include "Calculadora.h"
 
 Driver::Driver() {
-
+    Programa* P = new(Programa);
 }
 
 Driver::~Driver() {

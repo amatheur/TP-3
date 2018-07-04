@@ -3,6 +3,7 @@
 
 #include <string>
 
+
 using namespace std;
 
 class Driver {
@@ -33,7 +34,7 @@ public:
 	int instanteActual() const;
 
 private:
-	// COMPLETAR
+
 };
 
 #endif
