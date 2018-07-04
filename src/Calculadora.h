@@ -20,15 +20,15 @@ public:
 
     void AsignarVariable(Variable var, int val);
 
-    int InstanteActual();
+    int InstanteActual() const;
 
-    int IndiceInstActual();
+    int IndiceInstActual() const;
 
-    int ValorHistorico(Variable var, int inst);
+    int ValorHistorico(Variable var, int inst) const;
 
-    int ValorActual(Variable var);
+    int ValorActual(Variable var) const;
 
-    Pila<int> pila();
+    Pila<int> pila() const;
 
 private:
     struct InstConIt;
@@ -74,6 +74,8 @@ private:
     void Sigo() const;
 
     int DevolverYSacarDePila();
+
+    int BuscarEnVentana(Ventana& v, int instante, int inicio, int fin) const;
 
 };
 
